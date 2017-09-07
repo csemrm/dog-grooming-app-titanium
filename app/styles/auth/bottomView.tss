@@ -1,0 +1,15 @@
+"#bottomView": {
+    bottom: 10,
+    height: Ti.UI.SIZE,
+    width: 300,
+    layout: 'vertical'
+}
+"#privacy": {
+    top: 2,
+    text: "By singing in you agree to our terms of use and \n privacy policy",
+    color: Alloy.CFG.apptheme.label_light,
+    font:{
+        fontSize: 12
+    },
+    textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER
+}

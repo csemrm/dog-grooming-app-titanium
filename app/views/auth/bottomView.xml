@@ -1,0 +1,5 @@
+<Alloy>
+    <View id="bottomView">
+        <Label id="privacy"></Label>
+    </View>
+</Alloy>

@@ -16,10 +16,42 @@ color: '#000' // all platforms except Android and Windows default to black
 }
 */
 'Window': {
-    backgroundColor: Alloy.CFG.apptheme.MainColor
+    backgroundColor: 'transparent'
 }
 '.container':{
     backgroundColor: Alloy.CFG.apptheme.MainColor,
     width: Ti.UI.FILL,
     height: Ti.UI.FILL
-} 
+}
+
+"TextField":{
+    width: Titanium.UI.FILL,
+    height: 40,
+    borderWidth: 1,
+    borderColor: Alloy.CFG.apptheme.input_text_color,
+    hintTextColor:Alloy.CFG.apptheme.input_text_color,
+    color: Alloy.CFG.apptheme.input_text_color,
+    padding:{
+        left: 10,
+        right: 10
+    },
+    font:{
+        fontSize: 12
+    }
+}
+"TextArea":{
+    width: Titanium.UI.FILL,
+    height: 80,
+    borderWidth: 1,
+    borderColor: Alloy.CFG.apptheme.input_text_color,
+    hintTextColor:Alloy.CFG.apptheme.input_text_color,
+    color: Alloy.CFG.apptheme.input_text_color,
+    padding:{
+        left: 10,
+        right: 10,
+        top: 10
+    },
+    font:{
+        fontSize: 12
+    }
+}

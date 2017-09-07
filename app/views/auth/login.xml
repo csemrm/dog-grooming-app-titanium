@@ -1,9 +1,28 @@
 <Alloy>
-	<View class="container">
-	    <ScrollView id="">
-	        <ImageView id="logo"></ImageView>
-	        
-	        <View ></View>
-	    </ScrollView>
-	</View>
+    <View class="container">
+        <ImageView id="logo"></ImageView>
+        <View id="login_container" >
+            <ImageView id="downarrowicon"></ImageView>
+            <Label id="loginmessage"></Label>
+            <TextField id="emailaddress">
+                <ImageView id="emailicon"></ImageView>
+            </TextField>
+            <TextField id="password">
+                <ImageView id="passicon"></ImageView>
+            </TextField>
+            <View class="otherLoginView">
+                <ImageView id="signup" onClick="openSignup" ></ImageView>
+                <ImageView id="submit" onClick="onSubmit"></ImageView>
+            </View>
+            <View id="logindiver">
+                <View id="diverder"/>
+                <Label id="loginalt"></Label>
+            </View>
+            <View class="otherLoginView">
+                <ImageView id="facebook"></ImageView>
+                <ImageView id="twitter"></ImageView>
+            </View>
+        </View>
+        <Require src="auth/bottomView"></Require>
+    </View>
 </Alloy>

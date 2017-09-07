@@ -8,4 +8,4 @@
 // this screen will display when unable to reach server.
 
 var args = $.args;
-alert('s');
+

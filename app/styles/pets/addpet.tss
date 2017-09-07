@@ -186,7 +186,7 @@
 }
 
 
-"#next":{
+"#submit":{
     image: '/buttons/button.png',
     width: 240,
     height:Ti.UI.SIZE

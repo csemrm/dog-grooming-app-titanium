@@ -1,4 +1,30 @@
+'.container':{
+    backgroundColor: Alloy.CFG.apptheme.MainColor,
+    width: Ti.UI.FILL,
+    height: Ti.UI.FILL
+}
+"#errorlogo":{
+    image: '/icons/oops.png',
+    width: 200,
+    height:Ti.UI.SIZE,
+    top: 80
+}
 
-".container" : {
-  
+"#errormessage":{
+    width: 250,
+    bottom: 150,
+    color: Alloy.CFG.apptheme.color_black,
+    text: "UNABLE TO \n ACCESS APP AT THIS TIME",
+    font:{
+        fontSize: 20,
+        fontWeight: 'bold'
+    },
+    textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER
+}
+
+"#logosmall":{
+    image: '/others/logo-light.png',
+    width: 100,
+    height:Ti.UI.SIZE,
+    bottom: 30
 }

@@ -39,7 +39,7 @@
                 </TextField>
             </View>
             <View class="otherLoginView">
-                <ImageView id="next" onClick="goNext"></ImageView>
+                <ImageView id="submit" onClick="onSubmit"></ImageView>
             </View>
 
         </ScrollView>

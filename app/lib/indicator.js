@@ -4,9 +4,9 @@ function indicator() {
     // statusBarStyle = Titanium.UI.iPhone.StatusBar.OPAQUE_BLACK;
 
     var win = Ti.UI.createWindow({
-        backgroundColor : 'transparent', 
+        backgroundColor : 'transparent',
         statusBarStyle : statusBarStyle,
-        theme : "Theme.AppCompat.Translucent.NoTitleBar", 
+        theme : "Theme.AppCompat.Translucent.NoTitleBar",
         fullscreen : false
     });
 
@@ -17,8 +17,8 @@ function indicator() {
 
     var ani_image_view = Ti.UI.createImageView({
         images : images,
-        width : 120,
-        height : 120,
+        width : 60,
+        height : 60,
 
     });
 

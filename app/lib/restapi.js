@@ -18,7 +18,7 @@ exports.getConfig = function(onSucess, onError) {
         timeout : 50000
     });
 
-    var url = restURL + 'config/indesx';
+    var url = restURL + 'config/index';
     Ti.API.info('url ' + url);
     xhr.open('GET', encodeURI(url));
     xhr.send();

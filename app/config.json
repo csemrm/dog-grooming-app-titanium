@@ -14,7 +14,8 @@
             "description_color": "#535353",
             "cancel_color": "#cc0000",
             "label_dark": "#fff",
-            "input_text_color": "#ffffff",
+            "label_light": "#AFAFAF",
+            "input_text_color": "#BCBCBC",
             "tab_normal_color": "#95a5a6",
             "tab_active_color": "#FB6161",
             "reset_bg_color": "#95a5a6",
@@ -31,7 +32,7 @@
         },
         "siteURL": "http://groomingapp.softvalleysolutions.com/index.php/",
         "restURL": "http://groomingapp.softvalleysolutions.com/index.php/rest/",
-        "assets": "http://groomingapp.softvalleysolutions.com/uploads/images/"
+        "assets": "http://groomingapp.softvalleysolutions.com/uploads/"
     },
     "os:android": {},
     "os:blackberry": {},
