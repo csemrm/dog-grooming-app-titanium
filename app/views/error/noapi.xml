@@ -1,0 +1,7 @@
+<Alloy>
+    <View class="container">
+        <ImageView id="logo"></ImageView>
+        <Label id="errormessage"></Label>
+        <ImageView id="logosmall"></ImageView>
+    </View>
+</Alloy>

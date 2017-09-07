@@ -1,0 +1,9 @@
+<Alloy>
+	<View class="container">
+	    <ScrollView id="">
+	        <ImageView id="logo"></ImageView>
+	        
+	        <View ></View>
+	    </ScrollView>
+	</View>
+</Alloy>
