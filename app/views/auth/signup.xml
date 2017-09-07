@@ -38,6 +38,7 @@
                     <ImageView id="stateicon"></ImageView>
                 </TextField>
             </View>
+            <View class="otherLoginView" id="subsbox" ></View>
             <View class="otherLoginView">
                 <ImageView id="next" onClick="goNext"></ImageView>
             </View>

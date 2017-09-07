@@ -4,43 +4,28 @@
         <ScrollView id="login_container" >
             <ImageView id="downarrowicon"></ImageView>
             <Label id="loginmessage"></Label>
-            <TextField id="name">
-                <ImageView id="nameicon"></ImageView>
+            <TextField id="petname">
+                <ImageView id="petnameicon"></ImageView>
             </TextField>
-            <TextField id="phone">
-                <ImageView id="phoneicon"></ImageView>
-            </TextField>
-            <TextField id="emailaddress">
-                <ImageView id="emailicon"></ImageView>
-            </TextField>
-            <TextField id="password">
-                <ImageView class="passicon"></ImageView>
-            </TextField>
-            <TextField id="cpassword">
-                <ImageView class="passicon"></ImageView>
-            </TextField>
-            <View class="otherLoginView">
-                <TextField id="dob">
-                    <ImageView id="calicon"></ImageView>
-                </TextField>
-                <TextField id="gender">
-                    <ImageView id="gendericon"></ImageView>
-                </TextField>
+            <View class="otherLoginView" id="genderbox" >
+                <Label id="genderlbl"></Label>
             </View>
-            <TextArea id="address">
-                <ImageView id="addressicon"></ImageView>
-            </TextArea>
-            <View class="otherLoginView">
-                <TextField id="city">
-                    <ImageView id="cityicon"></ImageView>
-                </TextField>
-                <TextField id="state">
-                    <ImageView id="stateicon"></ImageView>
-                </TextField>
+            <View class="otherLoginView" id="animaltypebox" >
+                <Label id="animaltypelbl"></Label>
             </View>
-            <View class="otherLoginView">
-                <ImageView id="submit" onClick="onSubmit"></ImageView>
+            <TextField id="weight">
+                <ImageView id="weighticon"></ImageView>
+            </TextField>
+            <TextField id="bread">
+                <ImageView id="breadicon"></ImageView>
+            </TextField>
+            <View class="otherLoginView" id="uploadbox">
+                <View width="125">
+                    <Label id="piclbl"></Label>
+                    <ImageView id="picicon"></ImageView>
+                </View>
             </View>
+            <ImageView id="submit" onClick="onSubmit"></ImageView>
 
         </ScrollView>
         <Require src="auth/bottomView"></Require>

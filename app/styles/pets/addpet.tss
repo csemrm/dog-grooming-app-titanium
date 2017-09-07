@@ -17,7 +17,7 @@
     borderRadius: 10,
     backgroundColor: Alloy.CFG.apptheme.color_white,
     bottom: 90,
-    top: 140,
+    top: 130,
     disableBounce: true
 }
 
@@ -39,72 +39,78 @@
     },
     textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT
 }
-"#emailaddress":{
-    top: 10,
-    left: 20,
-    right: 20,
-    hintText: 'Enter Your Email ID',
-    returnKeyType:Titanium.UI.RETURNKEY_NEXT,
-    keyboardType: Titanium.UI.KEYBOARD_TYPE_EMAIL
-}
-"#emailicon":{
-    image: '/icons/message.png',
-    width: 16,
-    height:Ti.UI.SIZE,
-    right: 10
-}
 
-"#name":{
+"#petname":{
     top: 10,
     left: 20,
     right: 20,
-    hintText: 'Your Name',
+    hintText: 'Your pet name',
     returnKeyType:Titanium.UI.RETURNKEY_NEXT,
     keyboardType:  Titanium.UI.KEYBOARD_TYPE_DEFAULT
 }
-"#nameicon":{
-    image: '/icons/contacts.png',
+"#petnameicon":{
+    image: '/icons/dog.png',
     width: 16,
     height:Ti.UI.SIZE,
     right: 10
 }
-
-
-"#phone":{
+"#genderbox":{
+    layout: 'horizontal'
+}
+"#genderlbl":{
+    left: 0,
+    top: 15,
+    width: 80,
+    text: "Gender:",
+    color: Alloy.CFG.apptheme.input_text_color,
+    font:{
+        fontSize: 12,
+        fontWeight: 'bold'
+    },
+    textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT
+}
+"#animaltypebox":{
+    layout: 'horizontal'
+}
+"#animaltypelbl":{
+    left: 0,
+    top: 15,
+    width: 80,
+    text: "Animal Type:",
+    color: Alloy.CFG.apptheme.input_text_color,
+    font:{
+        fontSize: 12,
+        fontWeight: 'bold'
+    },
+    textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT
+}
+"#weight":{
     top: 2,
     left: 20,
     right: 20,
-    hintText: 'Your Phone',
+    hintText: 'Weight',
     returnKeyType:Titanium.UI.RETURNKEY_NEXT,
-    keyboardType: Titanium.UI.KEYBOARD_TYPE_PHONE_PAD
+    keyboardType: Titanium.UI.KEYBOARD_TYPE_DECIMAL_PAD
 }
-"#phoneicon":{
+"#weighticon":{
     image: '/icons/phone.png',
     width: 16,
     height:Ti.UI.SIZE,
     right: 10
 }
-"#password":{
+"#bread":{
     top: 2,
     left: 20,
     right: 20,
-    passwordMask: true,
-    hintText: 'Password',
+    hintText: 'Bread',
     returnKeyType:Titanium.UI.RETURNKEY_NEXT
 }
-"#cpassword":{
-    top: 2,
-    left: 20,
-    right: 20,
-    passwordMask: true,
-    hintText: 'Confirm Password',
-    returnKeyType:Titanium.UI.RETURNKEY_NEXT
-}
-".passicon":{
+"#breadicon":{
     image: '/icons/password.png',
     width: 16,
     height:Ti.UI.SIZE,
-    right: 10
+    right: 10,
+    visible: false
 }
 
 "#dob":{
@@ -139,52 +145,6 @@
 }
 
 
-"#address":{
-    top: 2,
-    value: 'Your Address',
-    left: 20,
-    right: 20,
-    hintText: 'Address',
-    returnKeyType:Titanium.UI.RETURNKEY_NEXT
-}
-"#addressicon":{
-    image: '/icons/worldwide_location.png',
-    width: 16,
-    height:Ti.UI.SIZE,
-    right: 10,
-    top: 10
-}
-
-
-"#city":{
-    top: 2,
-    hintText: 'City',
-    left: 0,
-    width: 120,
-    returnKeyType:Titanium.UI.RETURNKEY_NEXT
-}
-"#cityicon":{
-    image: '/icons/map_marker.png',
-    width: 16,
-    height:Ti.UI.SIZE,
-    right: 10
-}
-
-
-"#state":{
-    top: 2,
-    width: 120,
-    right: 0,
-    hintText: 'State',
-    returnKeyType:Titanium.UI.RETURNKEY_NEXT
-}
-"#stateicon":{
-    image: '/icons/password.png',
-    width: 16,
-    height:Ti.UI.SIZE,
-    right: 10
-}
-
 
 "#submit":{
     image: '/buttons/button.png',
@@ -194,5 +154,26 @@
 ".otherLoginView":{
     left: 20,
     right: 20,
-    height: 50
+    height: 40
+}
+"#uploadbox":{
+    height: 40,
+    borderWidth: 1,
+    borderColor: Alloy.CFG.apptheme.input_text_color
+}
+"#piclbl":{
+    width: Titanium.UI.SIZE,
+    text: "Upload picture of dog",
+    color: Alloy.CFG.apptheme.input_text_color,
+    font:{
+        fontSize: 10
+    },
+    textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
+    left: 0
+}
+"#picicon":{
+    image: '/icons/upload.png',
+    width: 16,
+    height:Ti.UI.SIZE,
+    right: 0
 }

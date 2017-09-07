@@ -40,7 +40,7 @@
     textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT
 }
 "#emailaddress":{
-    top: 10,
+    top: 2,
     left: 20,
     right: 20,
     hintText: 'Enter Your Email ID',
@@ -194,5 +194,5 @@
 ".otherLoginView":{
     left: 20,
     right: 20,
-    height: 50
+    height: 45
 }
