@@ -55,6 +55,8 @@
         <module platform="android">facebook</module>
         <module platform="android">ti.googlesignin</module>
         <module platform="iphone">facebook</module>
+        <module platform="iphone">ti.imagefactory</module>
+        <module platform="android">ti.imagefactory</module>
     </modules>
     <deployment-targets>
         <target device="android">true</target>

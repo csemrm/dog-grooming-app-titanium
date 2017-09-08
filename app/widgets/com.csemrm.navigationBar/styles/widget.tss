@@ -1,0 +1,80 @@
+"#Wrapper": {
+    top: "0dp",
+    left: "0dp",
+    width: Ti.UI.FILL,
+    height: "47dp",
+    backgroundColor: "#000"
+},
+"Label":{
+    color: '#fff',
+    font:{
+        fontSize: 30
+    }
+}
+"#border": {
+    bottom: "0dp",
+    height: "1dp",
+    width: Ti.UI.FILL,
+    backgroundColor: "#000",
+    opacity: 0.2
+},
+"#overlay": {
+    height: Ti.UI.FILL,
+    width: Ti.UI.FILL,
+    left: "0dp",
+    top: "0dp"
+},
+"#left": {
+    top: "0dp",
+    left: "0dp",
+    width: "48dp",
+    height: "47dp"
+},
+"#leftImage": {
+    top: "9dp",
+    left: "9dp",
+    width: "28dp",
+    height: "28dp",
+    touchEnabled: false
+},
+"#back": {
+    top: "0dp",
+    left: "0dp",
+    width: "48dp",
+    height: "47dp"
+},
+"#backImage": {
+    top: "9dp",
+    left: "9dp",
+    width: "28dp",
+    height: "28dp",
+    preventDefaultImage: true,
+    touchEnabled: false
+},
+"#next": {
+    top: "0dp",
+    right: "48dp",
+    width: "48dp",
+    height: "47dp"
+},
+"#nextImage": {
+    top: "9dp",
+    right: "9dp",
+    width: "28dp",
+    height: "28dp",
+    preventDefaultImage: true,
+    touchEnabled: false
+},
+"#right": {
+    top: "0dp",
+    right: "0dp",
+    width: "48dp",
+    height: "47dp"
+},
+"#rightImage": {
+    top: "9dp",
+    left: "10dp",
+    width: "28dp",
+    height: "28dp",
+    touchEnabled: false
+}

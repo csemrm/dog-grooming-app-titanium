@@ -1,0 +1,20 @@
+<Alloy>
+    <View id="Wrapper">
+        <View id="overlay">
+            <View id="back" visible="false">
+                <Label id="backImage" />
+            </View>
+            <View id="next" visible="false">
+                <Label id="nextImage" />
+            </View>
+            <View id="left" visible="false">
+                <Label id="leftImage" />
+            </View>
+            <View id="right" visible="false">
+                <Label id="rightImage" />
+            </View>
+        </View>
+        <View id="border" />
+        <Widget id = "fa" src = "com.mattmcfarland.fontawesome" />
+    </View>
+</Alloy>
