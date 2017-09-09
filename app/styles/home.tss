@@ -10,3 +10,11 @@
     layout: 'vertical',
     backgroundColor: Alloy.CFG.apptheme.color_white
 }
+"#mapContainner[platform=android]":{
+    top: 46,
+    bottom: 60,
+    width: Ti.UI.FILL,
+    height: Ti.UI.FILL,
+    layout: 'vertical',
+    backgroundColor: Alloy.CFG.apptheme.color_white
+}

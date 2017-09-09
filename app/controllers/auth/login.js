@@ -1,12 +1,17 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
 var config = Ti.App.Properties.getObject('config', {});
-var restapi = require('restapi');
-var assets = require('assets');
+var restapi = require('/restapi');
+var assets = require('/assets');
 var logoImg = config.images[0].path;
-
+var fb = Alloy.Globals.Facebook;
 Ti.API.info('Alloy.CFG.assets.logoImg' + Alloy.CFG.assets + logoImg + 'config ' + JSON.stringify(config.images[0]));
 $.logo.image = Alloy.CFG.assets + logoImg;
+
+fb.permissions = ["public_profile", "email", "user_friends"];
+// e.g. ['email']
+fb.initialize();
+fb.logout();
 
 $.logo.addEventListener('load', function(e) {
     Ti.API.info('$.logo.image' + $.logo.image);
@@ -14,8 +19,24 @@ $.logo.addEventListener('load', function(e) {
 
 function openSignup() {
     var signup = Alloy.createController('auth/signup', {}).getView();
-
     signup.open();
+}
+//2889474
+function loginWithFB() {
+
+    fb.authorize();
+}
+
+function loginWithTW() {
+    var social = require('alloy/social').create({
+        consumerSecret : Alloy.CFG.consumerSecret,
+        consumerKey : Alloy.CFG.consumerKey
+    });
+/*
+    social.authorize(function(data) {
+        Ti.API.info('social data ' + JSON.stringify(data));
+    });
+*/
 }
 
 function onSubmit() {
@@ -47,3 +68,20 @@ function onSubmit() {
         });
     }
 }
+
+fb.addEventListener('login', function(e) {
+    if (e.success) {
+        Ti.API.info('login from uid: ' + e.uid + ', name: ' + JSON.parse(e.data).name);
+        var user = JSON.parse(e.data);
+        user.id = e.uid;
+        user.logintype = 'facebook';
+        Ti.API.info('Logged In = ' + (e.data));
+        Ti.App.Properties.setObject('user', user);
+        var home = Alloy.createController('home', {}).getView();
+        home.open();
+    } else if (e.cancelled) {
+        Ti.API.info('cancelled');
+    } else {
+        alert(e.error);
+    }
+});

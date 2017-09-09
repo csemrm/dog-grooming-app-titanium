@@ -1,9 +1,9 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
-var restapi = require('restapi');
-var assets = require('assets');
-var indicator = require("./indicator");
-var radio = require('myTiRadioButton');
+var restapi = require('/restapi');
+var assets = require('/assets');
+var indicator = require("/indicator");
+var radio = require('/myTiRadioButton');
 indicator_win = new indicator();
 var config = Ti.App.Properties.getObject('config', {});
 var logoImg = config.images[0].path;

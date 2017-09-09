@@ -8,8 +8,8 @@
 //
 
 var args = $.args;
-var restapi = require('restapi');
-var assets = require('assets');
+var restapi = require('/restapi');
+var assets = require('/assets');
 var user = Ti.App.Properties.getObject('user', {});
 var dog = args.dog || {};
 Ti.API.info('dog' + JSON.stringify(dog));

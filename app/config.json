@@ -32,7 +32,9 @@
         },
         "siteURL": "http://groomingapp.softvalleysolutions.com/index.php/",
         "restURL": "http://groomingapp.softvalleysolutions.com/index.php/rest/",
-        "assets": "http://groomingapp.softvalleysolutions.com/uploads/"
+        "assets": "http://groomingapp.softvalleysolutions.com/uploads/",
+        "consumerSecret": "72zehpGrXV1BosVm1mbSUECbF8uXv7MjScpgmqaBuDFMtAmwwN",
+        "consumerKey": "j29CJPIqdBlxNRtDJBvadGuNo"
     },
     "os:android": {},
     "os:blackberry": {},

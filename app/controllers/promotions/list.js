@@ -7,9 +7,9 @@
 //
 
 var args = $.args;
-var restapi = require('restapi');
-var assets = require('assets');
-var indicator = require("./indicator");
+var restapi = require('/restapi');
+var assets = require('/assets');
+var indicator = require("/indicator");
 
 var user = Ti.App.Properties.getObject('user', {});
 indicator_win = new indicator();

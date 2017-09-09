@@ -16,7 +16,8 @@ color: '#000' // all platforms except Android and Windows default to black
 }
 */
 'Window': {
-    backgroundColor: 'transparent'
+    backgroundColor: Alloy.CFG.apptheme.MainColor,
+    theme: "Theme.AppCompat.Translucent.NoTitleBar"
 }
 '.container':{
     backgroundColor: Alloy.CFG.apptheme.MainColor,

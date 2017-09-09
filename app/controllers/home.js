@@ -7,8 +7,8 @@
 //
 
 var args = $.args;
-var restapi = require('restapi');
-var assets = require('assets');
+var restapi = require('/restapi');
+var assets = require('/assets');
 var user = Ti.App.Properties.getObject('user', {});
 inti();
 

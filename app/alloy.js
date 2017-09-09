@@ -11,3 +11,9 @@
 // Alloy.Globals.someGlobalFunction = function(){};
 
 Ti.App.Properties.setObject('config', {});
+Alloy.Globals.Facebook = require('facebook');
+
+Alloy.Globals.Facebook.permissions = ["public_profile", "email", "user_friends"];
+// e.g. ['email']
+Alloy.Globals.Facebook.initialize();
+Alloy.Globals.Facebook.logout(); 

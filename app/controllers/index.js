@@ -1,5 +1,5 @@
 var restapi = require('restapi');
-var indicator = require("./indicator");
+var indicator = require("indicator");
 indicator_win = new indicator();
 
 function onLoad(e) {
@@ -14,6 +14,12 @@ function onLoad(e) {
         indicator_win.close();
         Alloy.createController('error/noapi', {}).getView().open();
 
+    });
+}
+
+if (OS_ANDROID) {
+    $.index.fbProxy = Alloy.Globals.Facebook.createActivityWorker({
+        lifecycleContainer : $.index
     });
 }
 
