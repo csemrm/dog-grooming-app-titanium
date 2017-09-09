@@ -57,6 +57,7 @@
         <module platform="iphone">facebook</module>
         <module platform="iphone">ti.imagefactory</module>
         <module platform="android">ti.imagefactory</module>
+        <module platform="iphone">dk.napp.social</module>
     </modules>
     <deployment-targets>
         <target device="android">true</target>

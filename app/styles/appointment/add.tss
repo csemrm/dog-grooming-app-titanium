@@ -1,0 +1,118 @@
+'.container':{
+    backgroundImage: '/images/background.png',
+    backgroundColor: Alloy.CFG.apptheme.MainColor,
+    width: Ti.UI.FILL,
+    height: Ti.UI.FILL,
+    layout: 'vertical'
+}
+"#dogcontainner":{
+    backgroundColor: Alloy.CFG.apptheme.MainColor,
+    top: 10,
+    width: Ti.UI.FILL,
+    contentWidth: Ti.UI.SIZE,
+    height: 90,
+    disableBounce: true,
+    layout: 'horizontal'
+}
+
+"#login_container":{
+    layout: 'vertical',
+    width: 280,
+    borderRadius: 10,
+    backgroundColor: Alloy.CFG.apptheme.color_white,
+    bottom: 0,
+    top: 10,
+    disableBounce: true
+}
+
+"#downarrowicon":{
+    image: '/icons/arrow.png',
+    width: 12,
+    height:Ti.UI.SIZE,
+    top: 5
+}
+
+
+"#petname":{
+    top: 10,
+    left: 20,
+    right: 20,
+    hintText: 'Your pet name',
+    returnKeyType:Titanium.UI.RETURNKEY_NEXT,
+    keyboardType:  Titanium.UI.KEYBOARD_TYPE_DEFAULT
+}
+"#petnameicon":{
+    image: '/icons/dog.png',
+    width: 16,
+    height:Ti.UI.SIZE,
+    right: 10
+}
+"#genderbox":{
+    layout: 'horizontal',
+    width: Titanium.UI.FILL,
+    height: Titanium.UI.SIZE
+}
+"#genderlbl":{
+    left: 0,
+    top: 5,
+    width: 40,
+    text: "For a:",
+    color: Alloy.CFG.apptheme.input_text_color,
+    font:{
+        fontSize: 12,
+        fontWeight: 'bold'
+    },
+    textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT
+}
+"#animaltypebox":{
+    layout: 'horizontal'
+}
+"#submit":{
+    image: '/buttons/SAA.png',
+    width: 240,
+    height:Ti.UI.SIZE
+}
+".otherLoginView":{
+    top: 20,
+    left: 20,
+    right: 20,
+    height: 50
+}
+
+"#date":{
+    top: 2,
+    hintText: 'Date',
+    left: 0,
+    width: 120,
+    editable: false,
+    returnKeyType:Titanium.UI.RETURNKEY_NEXT
+}
+"#dateicon":{
+    image: '/icons/tear_off_calendar.png',
+    width: 16,
+    height:Ti.UI.SIZE,
+    right: 10
+}
+
+
+"#time":{
+    top: 2,
+    width: 120,
+    right: 0,
+    editable: false,
+    hintText: 'HH:MM',
+    returnKeyType:Titanium.UI.RETURNKEY_NEXT
+}
+"#timeicon":{
+    image: '/icons/time.png',
+    width: 16,
+    height:Ti.UI.SIZE,
+    right: 10
+}
+
+
+"#next":{
+    image: '/buttons/button.png',
+    width: 240,
+    height:Ti.UI.SIZE
+}

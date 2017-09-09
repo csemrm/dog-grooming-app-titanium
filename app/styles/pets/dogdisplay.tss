@@ -1,0 +1,24 @@
+
+".container": {
+    top: 5,
+    backgroundImage: '/images/shadowbg.png',
+    width: Ti.UI.FILL,
+    height: Ti.UI.SIZE,
+    layout: 'vertical'
+}
+"#imgdog":{
+    left: 9,
+    right: 9,
+    top: 4,
+    touchEnabled: false
+}
+"#dogname":{
+    top: 0,
+    height: 20,
+    color: Alloy.CFG.apptheme.color_black,
+    font:{
+        fontSize: 10
+    },
+    textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
+    touchEnabled: false
+}

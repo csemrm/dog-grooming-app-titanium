@@ -121,7 +121,7 @@ exports.createCheckBoxButtonGroup = function(arg) {
         height : arg.height,
         groupId : arg.groupId,
         layout : arg.layout,
-        top : 10,
+        top : 5,
         left : arg.left,
         selectedIndex : [],
         selectedValue : [],
@@ -132,7 +132,7 @@ exports.createCheckBoxButtonGroup = function(arg) {
         var radioItem = Ti.UI.createView({
             width : Ti.UI.SIZE,
             height : Ti.UI.SIZE,
-            top : 0,
+            top : 5,
             left : 2,
             id : i,
             status : false,
@@ -151,7 +151,9 @@ exports.createCheckBoxButtonGroup = function(arg) {
         var radioItemLabel = Ti.UI.createLabel({
             width : Ti.UI.SIZE,
             text : arg.radioItemsValue[i],
-
+            font : {
+                fontSize : 10
+            },
             color : arg.labelColor.length > 0 ? arg.labelColor : '#000',
             left : 2,
             id : i,

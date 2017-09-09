@@ -1,0 +1,8 @@
+<Alloy>
+	<View class="container" id="dogdisply">
+		<ImageView id="imgdog">
+		</ImageView>
+		<Label id="dogname">
+		</Label>
+	</View>
+</Alloy>

@@ -1,0 +1,43 @@
+".container": {
+    backgroundColor: Alloy.CFG.apptheme.color_white,
+    width: Ti.UI.FILL,
+    height: Ti.UI.FILL,
+    layout: 'vertical'
+}
+"#mapContainner":{
+    width: 320,
+    height: Ti.UI.FILL,
+    layout: 'vertical'
+}
+"#dogdisply": {
+    top: 0,
+    backgroundImage: '/images/shadowbg.png',
+    width: Ti.UI.FILL,
+    height: 320
+}
+"#imgdog":{
+    left: 20,
+    right: 20,
+    bottom: 20,
+    height: 283,
+    top: 8,
+    touchEnabled: false
+}
+"#dogname":{
+    top: 20,
+    height: 18,
+    left: 20,
+    color: Alloy.CFG.apptheme.color_black,
+    font:{
+        fontSize: 16
+    },
+    textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
+    touchEnabled: false
+}
+
+"#appointments":{
+    top: 20,
+    image: "/buttons/SAA.png",
+    width: 240,
+    height:Ti.UI.SIZE
+}

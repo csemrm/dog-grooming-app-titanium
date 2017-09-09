@@ -18,19 +18,22 @@ var deviceVersion = parseInt(Titanium.Platform.version.split(".")[0], 10);
 
 if (CONFIG.image) {
     var image = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, CONFIG.image);
-
-    if (image.exists()) {
-        image = image.nativePath;
-
-        $.title = Ti.UI.createImageView({
-            image : image,
-            height : "26dp",
-            width : Ti.UI.SIZE,
-            top : (OS_IOS && deviceVersion >= 7) ? "30dp" : "10dp",
-            bottom : "10dp",
-            preventDefaultImage : true
-        });
-    }
+    Ti.API.info('image' + image.exists() + ' d ' + image.nativePath);
+    //if (image.exists()) {
+    // image = image.nativePath;
+    Ti.API.info('image' + image.nativePath);
+    $.title = Ti.UI.createImageView({
+        image : CONFIG.image,
+        height : "26dp",
+        width : Ti.UI.SIZE,
+        top : (OS_IOS && deviceVersion >= 7) ? "30dp" : "10dp",
+        bottom : "10dp",
+        preventDefaultImage : true
+    });
+    $.title.addEventListener('load', function(e) {
+        Ti.API.info('eee' + JSON.stringify(e));
+    });
+    // }
 } else {
     Ti.API.info('theme' + theme);
     $.title = Ti.UI.createLabel({
@@ -96,11 +99,12 @@ $.setTitle = function(_text) {
  * @param {String} _params.image The image to show for the left button
  */
 $.showLeft = function(_params) {
+    Ti.API.info('_params' + JSON.stringify(_params));
     if (_params && typeof _params.callback !== "undefined") {
         $.left.visible = true;
-        $.fa.add($.backImage, 'fa-long-arrow-left');
+        $.leftImage.backgroundImage = _params.image;
+
         $.left.addEventListener("click", _params.callback);
-        $.title.left = 40;
     }
 };
 
@@ -135,7 +139,7 @@ $.showBack = function(_callback) {
         $.backImage.backgroundImage = theme == "white" ? WPATH("/images/white/ico-back-arrow.png") : WPATH("/images/black/ico-back-arrow.png");
         //$.fa.add($.backImage, 'fa-arrow-left');
         $.back.addEventListener("click", _callback);
-        $.title.left = 40;
+        //$.title.left = 40;
     }
 };
 

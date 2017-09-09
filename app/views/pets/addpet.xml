@@ -1,5 +1,5 @@
 <Alloy>
-    <Window class="container">
+    <View class="container">
         <ImageView id="logo"></ImageView>
         <ScrollView id="login_container" >
             <ImageView id="downarrowicon"></ImageView>
@@ -28,6 +28,5 @@
             <ImageView id="submit" onClick="onSubmit"></ImageView>
 
         </ScrollView>
-        <Require src="auth/bottomView"></Require>
-    </Window>
+    </View>
 </Alloy>

@@ -16,8 +16,8 @@
             "label_dark": "#fff",
             "label_light": "#AFAFAF",
             "input_text_color": "#BCBCBC",
-            "tab_normal_color": "#95a5a6",
-            "tab_active_color": "#FB6161",
+            "tab_normal_color": "#9A9A9A",
+            "tab_active_color": "#FF7E60",
             "reset_bg_color": "#95a5a6",
             "apply_bg_color": "#e74c3c",
             "listitem_color": "#95a5a6",
@@ -28,7 +28,7 @@
             "caption_color": "#757575",
             "add_truck_input_color": "#546e7a",
             "add_truck_label_color": "#b0bec5",
-            "top_nev_bar_bg": "#566C76"
+            "top_nev_bar_bg": "#F7765A"
         },
         "siteURL": "http://groomingapp.softvalleysolutions.com/index.php/",
         "restURL": "http://groomingapp.softvalleysolutions.com/index.php/rest/",
@@ -39,5 +39,16 @@
     "os:ios": {},
     "os:mobileweb": {},
     "os:windows": {},
-    "dependencies": {}
+    "dependencies": {
+        "com.mcongrove.detailNavigation": "1.1",
+        "com.csemrm.navigationBar": "1.1",
+        "com.mcongrove.navigationBar": "1.1",
+        "com.csemrm.tabs": "1.2",
+        "com.mcongrove.tabs": "1.2",
+        "com.mattmcfarland.fontawesome": "1.7.3",
+        "com.mcongrove.loading": "1.0",
+        "com.mcongrove.toast": "1.1",
+        "nl.fokkezb.pullToRefresh": "1.5.1",
+        "com.alcoapps.socialshare": "1.01"
+    }
 }

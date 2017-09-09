@@ -2,7 +2,6 @@ var moment = require('alloy/moment');
 var cl = Titanium.Locale.getCurrentLanguage();
 var ImageFactory = require('ti.imagefactory');
 
- 
 function alertMsg(args) {
     args = args || {};
     if (args.buttonNames) {
@@ -15,7 +14,7 @@ function alertMsg(args) {
     }
 
     var alertDialog = Ti.UI.createAlertDialog({
-        title : L('appname'),
+        title : ('WoodlesApp'),
         message : args.message,
         buttonNames : (args.buttonNames.length === 1) ? [args.ok] : [args.no, args.yes],
         cancel : 0

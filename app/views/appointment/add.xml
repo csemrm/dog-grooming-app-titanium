@@ -1,0 +1,26 @@
+<Alloy>
+	<View class="container">
+		<ScrollView id="dogcontainner" onClick="selectpet">
+		</ScrollView>
+		<ScrollView id="login_container" >
+			<ImageView id="downarrowicon">
+			</ImageView>
+			<View class="otherLoginView">
+				<TextField id="date">
+					<ImageView id="dateicon">
+					</ImageView>
+				</TextField>
+				<TextField id="time">
+					<ImageView id="timeicon">
+					</ImageView>
+				</TextField>
+			</View>
+			<View class="otherLoginView" id="genderbox" >
+				<Label id="genderlbl">
+				</Label>
+			</View>
+			<ImageView id="submit" onClick="onSubmit">
+			</ImageView>
+		</ScrollView>
+	</View>
+</Alloy>

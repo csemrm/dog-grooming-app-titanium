@@ -7,17 +7,17 @@
 
 "#logo":{
     image: '/others/logo.png',
-    width: 80,
+    width: 75,
     height:Ti.UI.SIZE,
-    top: 50
+    top: 20
 }
 "#login_container":{
     layout: 'vertical',
     width: 280,
     borderRadius: 10,
     backgroundColor: Alloy.CFG.apptheme.color_white,
-    bottom: 90,
-    top: 130,
+    bottom: 0,
+    top: 100,
     disableBounce: true
 }
 
@@ -25,7 +25,7 @@
     image: '/icons/arrow.png',
     width: 12,
     height:Ti.UI.SIZE,
-    top: 5
+    top: 2
 }
 
 "#loginmessage":{

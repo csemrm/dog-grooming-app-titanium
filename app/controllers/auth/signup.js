@@ -28,6 +28,6 @@ var subscribebtn = radio.createCheckBoxButtonGroup({
 $.subsbox.add(subscribebtn);
 
 function goNext(e) {
-    var addpet = Alloy.createController('pets/addpet', {}).getView();
+    var addpet = Alloy.createController('auth/signuppetadd', {}).getView();
     addpet.open();
 }

@@ -1,0 +1,9 @@
+
+".container": {}
+"#dogcontainner":{
+    width: 300,
+    contentWidth: 300,
+    height: Ti.UI.FILL,
+    layout: 'vertical',
+    backgroundColor: Alloy.CFG.apptheme.MainColor
+}

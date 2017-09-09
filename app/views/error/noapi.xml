@@ -1,7 +1,10 @@
 <Alloy>
-    <View class="container">
-        <ImageView id="errorlogo"></ImageView>
-        <Label id="errormessage"></Label>
-        <ImageView id="logosmall"></ImageView>
-    </View>
+	<Window class="container">
+		<ImageView id="errorlogo">
+		</ImageView>
+		<Label id="errormessage">
+		</Label>
+		<ImageView id="logosmall">
+		</ImageView>
+	</Window>
 </Alloy>

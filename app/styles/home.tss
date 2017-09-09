@@ -1,0 +1,12 @@
+"#main":{
+    width: Ti.UI.FILL,
+    height: Ti.UI.FILL
+}
+"#mapContainner":{
+    top: 66,
+    bottom: 60,
+    width: Ti.UI.FILL,
+    height: Ti.UI.FILL,
+    layout: 'vertical',
+    backgroundColor: Alloy.CFG.apptheme.color_white
+}

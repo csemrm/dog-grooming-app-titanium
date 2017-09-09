@@ -42,6 +42,7 @@
     top: 10,
     left: 20,
     right: 20,
+    value: 'pphmit@gmail.com',
     hintText: 'Enter Your Email ID',
     returnKeyType:Titanium.UI.RETURNKEY_NEXT,
     keyboardType: Titanium.UI.KEYBOARD_TYPE_EMAIL
@@ -56,6 +57,7 @@
     top: 10,
     left: 20,
     right: 20,
+    value: '123',
     hintText: 'Password',
     returnKeyType:Titanium.UI.RETURNKEY_GO
 }

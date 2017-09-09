@@ -1,0 +1,24 @@
+".container": {
+    backgroundColor: Alloy.CFG.apptheme.color_white,
+    top: 5,
+    width: 120,
+    height: 80,
+    layout: 'vertical',
+    left: 9,
+    borderWidth: 2,
+    borderRadius: 5,
+    borderColor: Alloy.CFG.apptheme.color_white
+}
+"#imgdog":{
+    touchEnabled: false
+}
+"#dogname":{
+    top: 0,
+    height: 20,
+    color: Alloy.CFG.apptheme.color_black,
+    font:{
+        fontSize: 10
+    },
+    textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
+    touchEnabled: false
+}

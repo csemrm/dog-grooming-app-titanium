@@ -1,6 +1,5 @@
 var indicator = require("./indicator");
 var restURL = Alloy.CFG.restURL;
-//indicator_win = new indicator();
 
 exports.getConfig = function(onSucess, onError) {
 
@@ -72,5 +71,49 @@ exports.register = function(data, callback) {
     Ti.API.info('url ' + url);
     xhr.open('POST', encodeURI(url));
     xhr.send(data);
+
+};
+exports.loaddogs = function(data, onSucess, onError) {
+
+    var xhr = Ti.Network.createHTTPClient({
+        onload : function() {
+            Ti.API.info('this.responseText ' + this.responseText);
+            json = JSON.parse(this.responseText);
+            onSucess(json);
+        },
+        onerror : function(e) {
+            onError();
+            Ti.API.info('this.responseText onerror' + this.responseText);
+        },
+        timeout : 50000
+    });
+
+    Ti.API.info('data ' + JSON.stringify(data));
+    var url = restURL + 'dogs/get/appuser_id/' + data;
+    Ti.API.info('url ' + url);
+    xhr.open('GET', encodeURI(url));
+    xhr.send();
+
+};
+
+exports.loadpromos = function(onSucess, onError) {
+
+    var xhr = Ti.Network.createHTTPClient({
+        onload : function() {
+            Ti.API.info('this.responseText ' + this.responseText);
+            json = JSON.parse(this.responseText);
+            onSucess(json);
+        },
+        onerror : function(e) {
+            onError();
+            Ti.API.info('this.responseText onerror' + this.responseText);
+        },
+        timeout : 50000
+    });
+
+    var url = restURL + 'feeds/index';
+    Ti.API.info('url ' + url);
+    xhr.open('GET', encodeURI(url));
+    xhr.send();
 
 };

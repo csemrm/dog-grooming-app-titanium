@@ -1,0 +1,28 @@
+".container": {
+    top: 0,
+    backgroundColor: Alloy.CFG.apptheme.color_white,
+    width: Ti.UI.FILL,
+    height: Ti.UI.SIZE,
+    layout: 'vertical'
+}
+"#dogdisply": {
+    top: 0,
+    backgroundImage: '/images/promoshadowbg.png',
+    width: Ti.UI.FILL,
+    height: Ti.UI.SIZE
+}
+"#imgdog":{
+    left: 8,
+    right: 8,
+    height: Ti.UI.SIZE,
+    top: 5,
+    bottom: 10,
+    touchEnabled: false
+}
+
+"#appointments":{
+    top: 10,
+    image: "/buttons/SAA.png",
+    width: 240,
+    height:Ti.UI.SIZE
+}
