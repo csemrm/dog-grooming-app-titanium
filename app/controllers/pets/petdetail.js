@@ -29,18 +29,18 @@ function inti() {
     $.navigationBar.showBack(function(_event) {
         $.petdetail.close();
     });
-    
+
     $.navigationBar.showMyRight({
-        icon : '/icons/businessman.png',
+        icon : '/icons/share.png',
         _callback : function(_event) {
-            var data = 
-{ status : dog.name,
-url : images[0],            subject : dog.name,
-image : $.imgdog.toBlob(),
-view : $.mapContainner,
-}
-;
-             assets.shareTextWidget(data);
+            var data = {
+                status : dog.name,
+                url : images[0],
+                subject : dog.name,
+                image : $.imgdog.toBlob(),
+                view : $.mapContainner,
+            };
+            assets.shareTextWidget(data);
         }
     });
 

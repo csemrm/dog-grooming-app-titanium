@@ -195,7 +195,7 @@ exports.getLocation = function getLocation(callback) {
 exports.PhotoOptionDialog = function(truckImageBox) {
 
     var dialog = Ti.UI.createOptionDialog({
-        options : [L("camera"), L("gallery"), L("cancel")],
+        options : ["Camera", "Gallery", "Cancel"],
         cancel : 2,
     });
 
@@ -224,8 +224,8 @@ exports.PhotoOptionDialog = function(truckImageBox) {
                 success : function(e) {
                     if (e.mediaType == Ti.Media.MEDIA_TYPE_PHOTO) {
                         var image = ImageFactory.imageAsResized(e.media, {
-                            width : 1024,
-                            height : 786
+                            width : 640,
+                            height : 640
                         });
                         truckImageBox.image = image;
                     }
@@ -247,8 +247,8 @@ function cShowCamera(truckImageBox) {
             Ti.API.debug('Our type was: ' + event.mediaType);
             if (event.mediaType == Ti.Media.MEDIA_TYPE_PHOTO) {
                 var image = ImageFactory.imageAsResized(event.media, {
-                    width : 1024,
-                    height : 786
+                    width : 640,
+                    height : 640
                 });
                 truckImageBox.image = image;
             }
@@ -287,4 +287,233 @@ exports.secretCodeGent = function(e) {
 
     return text;
 
+};
+
+exports.androidPicker = function(type, selectText, value) {
+
+    var picker = Ti.UI.createPicker({
+        type : Ti.UI.PICKER_TYPE_DATE,
+        maxDate : new Date(),
+    });
+
+    if (type == "date") {
+        var picker = Ti.UI.createPicker({
+            type : Ti.UI.PICKER_TYPE_DATE,
+        });
+
+    } else {
+        var picker = Ti.UI.createPicker({
+            type : Ti.UI.PICKER_TYPE_TIME,
+            format24 : false,
+        });
+    }
+
+    picker.showDatePickerDialog({
+        value : value,
+        callback : function(e) {
+            if (e.cancel) {
+
+                Ti.API.info('User canceled diaTi.API.info');
+            } else {
+                if (type == "date") {
+                    selectText.value = moment(e.value.toString(), 'ddd MMM DD YYYY HH:mm:ss Z').format('MM/DD/YY');
+                    var dateDAn = {
+                        dd : e.value.getDate(),
+                        mm : e.value.getMonth(),
+                        yy : e.value.getFullYear()
+                    };
+                    selectText.dateDAn = dateDAn;
+                } else {
+                    var value,
+                        hours,
+                        flag,
+                        minutes;
+                    if (picker.value.getHours() < 10) {
+
+                        hours = "0" + picker.value.getHours();
+                        flag = 'AM';
+
+                    } else {
+                        if (picker.value.getHours() < 12) {
+                            hours = picker.value.getHours();
+                            flag = 'AM';
+                        } else {
+                            hours = "0" + (picker.value.getHours() - 12);
+                            flag = 'PM';
+                        }
+                    }
+                    if (picker.value.getMinutes() < 30) {
+                        minutes = "00";
+                    } else
+                        minutes = picker.value.getMinutes();
+                    value = hours + ':' + minutes + ' ' + flag;
+
+                    selectText.value = value;
+
+                    var dd = picker.value.getDate();
+                    var mm = picker.value.getMonth();
+                    var yy = picker.value.getFullYear();
+                    var d = new Date(picker.value);
+                    var hour = d.getHours();
+                    var min = d.getMinutes();
+
+                    selectText.timeStamp = new Date(yy, mm, dd, hour, min).getTime();
+
+                }
+            }
+        }
+    });
+};
+
+exports.timeanddate_picker = function(type, selectRow, addTo, value) {
+
+    var pickdata = [];
+    saveTime = [];
+    var topView = Ti.UI.createView({
+        width : Ti.UI.FILL,
+        height : Ti.UI.FILL,
+        backgroundColor : "transparent",
+        zIndex : 99
+
+    });
+
+    if (type == "date") {
+        var picker = Ti.UI.createPicker({
+            type : Titanium.UI.PICKER_TYPE_DATE,
+            calendarViewShown : false,
+            maxDate : new Date(),
+            value : value,
+            bottom : 0,
+        });
+
+    } else {
+        var picker = Ti.UI.createPicker({
+            type : Ti.UI.PICKER_TYPE_TIME,
+            format24 : false,
+            value : value,
+            bottom : 0,
+        });
+    }
+
+    var selectButton = Ti.UI.createButton({
+        height : 40,
+        width : 55,
+        right : 10,
+        title : 'Select',
+        font : {
+            fontSize : 14,
+            fontWeight : 'bold'
+        },
+        color : 'white',
+        backgroundColor : 'transparent'
+    });
+
+    selectButton.addEventListener('click', function(e) {
+        if (type == "date") {
+            Ti.API.info('date ' + moment(picker.value.toString(), 'ddd MMM DD YYYY HH:mm:ss Z').format('MM/DD/YYYY'));
+            selectRow.value = moment(picker.value.toString(), 'ddd MMM DD YYYY HH:mm:ss Z').format('MM/DD/YYYY');
+            selectRow.time_stamp = new moment(picker.value.toString(), 'ddd MMM DD YYYY HH:mm:ss Z').format('YYYY-MM-DDTHH:mm:ss');
+
+            var dd = picker.value.getDate();
+            var mm = picker.value.getMonth();
+            var yy = picker.value.getFullYear();
+            var d = new Date(picker.value);
+            var hour = d.getHours();
+            var min = d.getMinutes();
+
+            var dateD = {
+                dd : picker.value.getDate(),
+                mm : picker.value.getMonth(),
+                yy : picker.value.getFullYear()
+            };
+
+            selectRow.timeStamp = new Date(yy, mm, dd).getTime();
+
+            addTo.remove(topView);
+        } else {
+            var value,
+                hours,
+                flag,
+                minutes;
+            if (picker.value.getHours() < 10) {
+
+                hours = "0" + picker.value.getHours();
+                flag = 'AM';
+
+            } else {
+                if (picker.value.getHours() < 12) {
+                    hours = picker.value.getHours();
+                    flag = 'AM';
+                } else {
+                    hours = "0" + (picker.value.getHours() - 12);
+                    flag = 'PM';
+                }
+            }
+            if (picker.value.getMinutes() < 30) {
+                minutes = "00";
+            } else
+                minutes = picker.value.getMinutes();
+            value = hours + ':' + minutes + ' ' + flag;
+
+            selectRow.value = value;
+
+            var dd = picker.value.getDate();
+            var mm = picker.value.getMonth();
+            var yy = picker.value.getFullYear();
+            var d = new Date(picker.value);
+            var hour = d.getHours();
+            var min = d.getMinutes();
+
+            selectRow.timeStamp = new Date(yy, mm, dd, hour, min).getTime();
+
+            console.log('Test====' + selectRow.timeStamp);
+            addTo.remove(topView);
+        }
+    });
+
+    var cancelButton = Ti.UI.createButton({
+        height : 30,
+        width : 55,
+
+        left : 10,
+        title : "Cancel",
+        font : {
+            fontSize : 14,
+            fontWeight : 'bold'
+        },
+        translucent : true,
+        color : 'white',
+        backgroundColor : 'transparent'//"#007FA3",
+    });
+
+    var flexSpace = Titanium.UI.createButton({
+        systemButton : Ti.UI.iOS.SystemButton.FLEXIBLE_SPACE
+    });
+    var pickerView = Ti.UI.createView({
+        width : Ti.UI.FILL,
+        height : 258,
+        backgroundColor : '#202020',
+        bottom : 0,
+    });
+    topView.add(pickerView);
+
+    var toolView = Ti.UI.createView({
+        left : 0,
+        top : 0,
+        height : 44,
+        right : 0,
+        backgroundColor : "#202020",//Ti.App.img + 'toolbar-.png'
+    });
+    toolView.add(selectButton);
+    toolView.add(cancelButton);
+    pickerView.add(toolView);
+    pickerView.add(picker);
+    topView.add(pickerView);
+
+    cancelButton.addEventListener('click', function(e) {
+
+        addTo.remove(topView);
+    });
+
+    return topView;
 };

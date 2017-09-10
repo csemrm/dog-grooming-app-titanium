@@ -60,6 +60,12 @@
                   <string>fbauth2</string>
                   <string>fbshareextension</string>
                 </array>
+                <key>NSPhotoLibraryUsageDescription</key>
+                <string>Can we use your Photo Library?</string>
+                <key>NSAppleMusicUsageDescription</key>
+                <string>Can we use your Music Library?</string>
+                <key>NSCameraUsageDescription</key>
+                <string>Can we use your camera?</string>
             </dict>
         </plist>
     </ios>

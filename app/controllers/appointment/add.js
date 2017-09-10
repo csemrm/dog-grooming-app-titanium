@@ -87,3 +87,26 @@ function displayloaddogs(dogs) {
 }
 
 loaddogs(user);
+
+function openTimePicker() {
+
+    if (OS_IOS) {
+        var picker_view = assets.timeanddate_picker('time', $.time, $.add);
+        $.add.add(picker_view);
+    } else {
+        assets.androidPicker('time', $.time);
+    }
+
+}
+
+function openDatePicker() {
+
+    if (OS_IOS) {
+        var picker_view = assets.timeanddate_picker('date', $.date, $.add);
+        $.add.add(picker_view);
+    } else {
+        assets.androidPicker($.add);
+    }
+
+}
+

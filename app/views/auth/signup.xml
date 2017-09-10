@@ -1,5 +1,5 @@
 <Alloy>
-    <Window class="container">
+    <Window class="container" id="signup">
         <ImageView id="logo"></ImageView>
         <ScrollView id="login_container" >
             <ImageView id="downarrowicon"></ImageView>
@@ -20,12 +20,10 @@
                 <ImageView class="passicon"></ImageView>
             </TextField>
             <View class="otherLoginView">
-                <TextField id="dob">
+                <TextField id="dob" onClick="openPicker">
                     <ImageView id="calicon"></ImageView>
                 </TextField>
-                <TextField id="gender">
-                    <ImageView id="gendericon"></ImageView>
-                </TextField>
+                <View id="gender"></View>
             </View>
             <TextArea id="address">
                 <ImageView id="addressicon"></ImageView>

@@ -42,6 +42,9 @@ var animaltype_opts = radio.createRadioButtonGroup({
     labelColor : Alloy.CFG.apptheme.input_text_color,
 });
 $.animaltypebox.add(animaltype_opts);
+function PhotoOptionDialog() {
+    assets.PhotoOptionDialog($.dogpic);
+}
 
 function onSubmit(e) {
 

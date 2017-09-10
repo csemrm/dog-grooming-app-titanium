@@ -2,8 +2,7 @@
     backgroundImage: '/images/background.png',
     backgroundColor: Alloy.CFG.apptheme.MainColor,
     width: Ti.UI.FILL,
-    height: Ti.UI.FILL,
-    layout: 'vertical'
+    height: Ti.UI.FILL
 }
 "#dogcontainner":{
     backgroundColor: Alloy.CFG.apptheme.MainColor,
@@ -21,7 +20,7 @@
     borderRadius: 10,
     backgroundColor: Alloy.CFG.apptheme.color_white,
     bottom: 0,
-    top: 10,
+    top: 110,
     disableBounce: true
 }
 

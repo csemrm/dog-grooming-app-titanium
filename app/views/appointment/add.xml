@@ -1,16 +1,16 @@
 <Alloy>
-	<View class="container">
+	<View class="container" id="add">
 		<ScrollView id="dogcontainner" onClick="selectpet">
 		</ScrollView>
 		<ScrollView id="login_container" >
 			<ImageView id="downarrowicon">
 			</ImageView>
 			<View class="otherLoginView">
-				<TextField id="date">
+				<TextField id="date" onClick="openDatePicker">
 					<ImageView id="dateicon">
 					</ImageView>
 				</TextField>
-				<TextField id="time">
+				<TextField id="time" onClick="openTimePicker">
 					<ImageView id="timeicon">
 					</ImageView>
 				</TextField>
