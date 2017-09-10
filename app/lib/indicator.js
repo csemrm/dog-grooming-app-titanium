@@ -33,8 +33,12 @@ function indicator() {
         ani_image_view.stop();
     });
     win.addEventListener('androidback', function(e) {
-
+        win.close();
     });
+
+    setTimeout(function() {
+        win.close();
+    }, 1000);
 
     return win;
 

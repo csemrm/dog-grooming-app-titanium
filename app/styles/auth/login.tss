@@ -59,6 +59,7 @@
     right: 20,
     value: '123',
     hintText: 'Password',
+    passwordMask: true,
     returnKeyType:Titanium.UI.RETURNKEY_GO
 }
 "#passicon":{

@@ -291,31 +291,19 @@ exports.secretCodeGent = function(e) {
 
 exports.androidPicker = function(type, selectText, value) {
 
-    var picker = Ti.UI.createPicker({
-        type : Ti.UI.PICKER_TYPE_DATE,
-        maxDate : new Date(),
-    });
-
     if (type == "date") {
         var picker = Ti.UI.createPicker({
             type : Ti.UI.PICKER_TYPE_DATE,
         });
 
-    } else {
-        var picker = Ti.UI.createPicker({
-            type : Ti.UI.PICKER_TYPE_TIME,
-            format24 : false,
-        });
-    }
+        picker.showDatePickerDialog({
+            //value : value,
+            callback : function(e) {
+                if (e.cancel) {
 
-    picker.showDatePickerDialog({
-        value : value,
-        callback : function(e) {
-            if (e.cancel) {
+                    Ti.API.info('User canceled diaTi.API.info');
+                } else {
 
-                Ti.API.info('User canceled diaTi.API.info');
-            } else {
-                if (type == "date") {
                     selectText.value = moment(e.value.toString(), 'ddd MMM DD YYYY HH:mm:ss Z').format('MM/DD/YY');
                     var dateDAn = {
                         dd : e.value.getDate(),
@@ -323,7 +311,25 @@ exports.androidPicker = function(type, selectText, value) {
                         yy : e.value.getFullYear()
                     };
                     selectText.dateDAn = dateDAn;
+
+                }
+            }
+        });
+    } else {
+
+        var picker = Ti.UI.createPicker({
+            type : Ti.UI.PICKER_TYPE_TIME,
+            format24 : false,
+        });
+
+        picker.showTimePickerDialog({
+            value : value,
+            callback : function(e) {
+                if (e.cancel) {
+
+                    Ti.API.info('User canceled diaTi.API.info');
                 } else {
+
                     var value,
                         hours,
                         flag,
@@ -357,12 +363,10 @@ exports.androidPicker = function(type, selectText, value) {
                     var hour = d.getHours();
                     var min = d.getMinutes();
 
-                    selectText.timeStamp = new Date(yy, mm, dd, hour, min).getTime();
-
                 }
             }
-        }
-    });
+        });
+    }
 };
 
 exports.timeanddate_picker = function(type, selectRow, addTo, value) {
@@ -427,8 +431,6 @@ exports.timeanddate_picker = function(type, selectRow, addTo, value) {
                 yy : picker.value.getFullYear()
             };
 
-            selectRow.timeStamp = new Date(yy, mm, dd).getTime();
-
             addTo.remove(topView);
         } else {
             var value,
@@ -463,8 +465,6 @@ exports.timeanddate_picker = function(type, selectRow, addTo, value) {
             var d = new Date(picker.value);
             var hour = d.getHours();
             var min = d.getMinutes();
-
-            selectRow.timeStamp = new Date(yy, mm, dd, hour, min).getTime();
 
             console.log('Test====' + selectRow.timeStamp);
             addTo.remove(topView);

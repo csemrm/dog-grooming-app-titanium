@@ -14,8 +14,8 @@ Ti.API.info('dog' + JSON.stringify(dog));
 
 var images = [];
 $.dogdisply.height = 180;
-$.dogdisply.width = 160;
-//$.imgdog.width = 144;
+$.dogdisply.width = '50%';
+$.imgdog.width = 148;
 $.imgdog.height = 160;
 $.dogdisply.dog = dog;
 for (var i = 0,

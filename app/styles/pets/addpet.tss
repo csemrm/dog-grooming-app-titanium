@@ -31,7 +31,7 @@
 "#loginmessage":{
     top: 10,
     left: 20,
-    text: "Personal Information",
+    text: "Pet Information",
     color: Alloy.CFG.apptheme.color_black,
     font:{
         fontSize: 12,

@@ -7,8 +7,8 @@
     layout: 'vertical'
 }
 "#imgdog":{
-    left: 9,
-    right: 9,
+    //left: 9,
+    //right: 9,
     top: 4,
     touchEnabled: false
 }

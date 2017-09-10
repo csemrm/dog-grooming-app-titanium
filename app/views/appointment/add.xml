@@ -2,7 +2,7 @@
 	<View class="container" id="add">
 		<ScrollView id="dogcontainner" onClick="selectpet">
 		</ScrollView>
-		<ScrollView id="login_container" >
+		<View id="login_container" >
 			<ImageView id="downarrowicon">
 			</ImageView>
 			<View class="otherLoginView">
@@ -21,6 +21,6 @@
 			</View>
 			<ImageView id="submit" onClick="onSubmit">
 			</ImageView>
-		</ScrollView>
+		</View>
 	</View>
 </Alloy>

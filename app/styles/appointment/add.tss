@@ -8,6 +8,7 @@
     backgroundColor: Alloy.CFG.apptheme.MainColor,
     top: 10,
     width: Ti.UI.FILL,
+    contentHeight: 90,
     contentWidth: Ti.UI.SIZE,
     height: 90,
     disableBounce: true,

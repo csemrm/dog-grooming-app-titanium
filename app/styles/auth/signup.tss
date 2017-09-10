@@ -110,6 +110,7 @@
 "#dob":{
     top: 2,
     editable: false,
+    focusable: false,
     left: 0,
     width: 120,
     hintText: 'Date of Birth',
