@@ -18,3 +18,8 @@ for (var i = 0,
 };
 $.imgdog.images = images;
 $.imgdog.start();
+function setAppointments() {
+    Alloy.createController('appointment/addWin', {
+        promo_id : promo.id
+    }).getView().open();
+}

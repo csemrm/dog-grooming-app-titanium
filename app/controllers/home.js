@@ -74,12 +74,16 @@ $.Tabs.Wrapper.addEventListener("click", handleTabClick);
 function handleTabClick(_event) {
     Ti.API.info('handleTabClick ' + JSON.stringify(_event));
     if ( typeof _event.source.id !== "undefined") {
+        $.Tabs.setIndex(_event.source.id);
         $.mapContainner.removeAllChildren();
-        var controller = Alloy.createController(tabs[_event.source.id].controller).getView();
+        var controller = Alloy.createController(tabs[_event.source.id].controller, {
+            ref : 'home'
+        }).getView();
         $.mapContainner.add(controller);
     }
 }
 
+Ti.App.addEventListener('reload:lsit', handleTabClick);
 setTimeout(function() {
     $.Tabs.setIndex(0);
     $.mapContainner.removeAllChildren();

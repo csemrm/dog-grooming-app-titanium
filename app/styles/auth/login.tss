@@ -42,7 +42,7 @@
     top: 10,
     left: 20,
     right: 20,
-    value: 'pphmit@gmail.com',
+    value: 'csemrm@gmail.com',
     hintText: 'Enter Your Email ID',
     returnKeyType:Titanium.UI.RETURNKEY_NEXT,
     keyboardType: Titanium.UI.KEYBOARD_TYPE_EMAIL

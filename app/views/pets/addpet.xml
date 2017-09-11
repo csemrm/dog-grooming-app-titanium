@@ -1,44 +1,34 @@
 <Alloy>
-	<View class="container">
-		<ImageView id="logo">
-		</ImageView>
-		<ScrollView id="login_container" >
-			<ImageView id="downarrowicon">
-			</ImageView>
-			<Label id="loginmessage">
-			</Label>
-			<TextField id="petname">
-				<ImageView id="petnameicon">
-				</ImageView>
-			</TextField>
-			<View class="otherLoginView" id="genderbox" >
-				<Label id="genderlbl">
-				</Label>
-			</View>
-			<View class="otherLoginView" id="animaltypebox" >
-				<Label id="animaltypelbl">
-				</Label>
-			</View>
-			<TextField id="weight">
-				<ImageView id="weighticon">
-				</ImageView>
-			</TextField>
-			<TextField id="bread">
-				<ImageView id="breadicon">
-				</ImageView>
-			</TextField>
-			<View class="otherLoginView" id="uploadbox" onClick="PhotoOptionDialog" >
-				<View width="125">
-					<Label id="piclbl">
-					</Label>
-					<ImageView id="picicon">
-					</ImageView>
-				</View>
-				<ImageView id="dogpic">
-				</ImageView>
-			</View>
-			<ImageView id="submit" onClick="onSubmit">
-			</ImageView>
-		</ScrollView>
-	</View>
+    <View class="container">
+        <ImageView id="logo"></ImageView>
+        <ScrollView id="login_container" >
+            <ImageView id="downarrowicon"></ImageView>
+            <Label id="loginmessage"></Label>
+            <TextField id="petname">
+                <ImageView id="petnameicon"></ImageView>
+            </TextField>
+            <View class="otherLoginView"  >
+                <Label id="genderlbl"></Label>
+                <View id="genderbox"></View>
+            </View>
+            <View class="otherLoginView" >
+                <Label id="animaltypelbl"></Label>
+                <View id="animaltypebox"></View>
+            </View>
+            <TextField id="weight">
+                <ImageView id="weighticon"></ImageView>
+            </TextField>
+            <TextField id="bread">
+                <ImageView id="breadicon"></ImageView>
+            </TextField>
+            <View class="otherLoginView" id="uploadbox" onClick="PhotoOptionDialog" >
+                <View width="125">
+                    <Label id="piclbl"></Label>
+                    <ImageView id="picicon"></ImageView>
+                </View>
+                <ImageView id="dogpic"></ImageView>
+            </View>
+            <ImageView id="submit" onClick="onSubmit"></ImageView>
+        </ScrollView>
+    </View>
 </Alloy>

@@ -8,12 +8,16 @@
 //
 
 var args = $.args;
-
+var dogId = args.dogId || '';
 var dog = args.dog || {};
 Ti.API.info('dog' + JSON.stringify(dog));
 
 var images = [];
 $.dogdisply.dog = dog;
+
+if (dog.id === dogId) {
+    $.dogdisply.borderColor = Alloy.CFG.apptheme.top_nev_bar_bg;
+}
 for (var i = 0,
     j = dog.images.length; i < j; i++) {
     images.push(Alloy.CFG.assets + dog.images[i].path);

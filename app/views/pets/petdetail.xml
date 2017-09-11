@@ -8,7 +8,7 @@
 			</View>
 			<Label id="dogname">
 			</Label>
-			<ImageView id="appointments">
+			<ImageView id="appointments" onClick="setAppointments">
 			</ImageView>
 		</ScrollView>
 	</Window>

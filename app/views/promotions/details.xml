@@ -1,10 +1,8 @@
 <Alloy>
-	<View class="container">
-		<View  id="dogdisply">
-			<ImageView id="imgdog">
-			</ImageView>
-		</View>
-		<ImageView id="appointments">
-		</ImageView>
-	</View>
+    <View class="container">
+        <View  id="dogdisply">
+            <ImageView id="imgdog"></ImageView>
+        </View>
+        <ImageView id="appointments" onClick="setAppointments"></ImageView>
+    </View>
 </Alloy>

@@ -304,7 +304,7 @@ exports.androidPicker = function(type, selectText, value) {
                     Ti.API.info('User canceled diaTi.API.info');
                 } else {
 
-                    selectText.value = moment(e.value.toString(), 'ddd MMM DD YYYY HH:mm:ss Z').format('MM/DD/YY');
+                    selectText.value = moment(e.value.toString(), 'ddd MMM DD YYYY HH:mm:ss Z').format('DD/MM/YYYY');
                     var dateDAn = {
                         dd : e.value.getDate(),
                         mm : e.value.getMonth(),
@@ -414,8 +414,8 @@ exports.timeanddate_picker = function(type, selectRow, addTo, value) {
 
     selectButton.addEventListener('click', function(e) {
         if (type == "date") {
-            Ti.API.info('date ' + moment(picker.value.toString(), 'ddd MMM DD YYYY HH:mm:ss Z').format('MM/DD/YYYY'));
-            selectRow.value = moment(picker.value.toString(), 'ddd MMM DD YYYY HH:mm:ss Z').format('MM/DD/YYYY');
+            Ti.API.info('date ' + moment(picker.value.toString(), 'ddd MMM DD YYYY HH:mm:ss Z').format('DD/MM/YYYY'));
+            selectRow.value = moment(picker.value.toString(), 'ddd MMM DD YYYY HH:mm:ss Z').format('DD/MM/YYYY');
             selectRow.time_stamp = new moment(picker.value.toString(), 'ddd MMM DD YYYY HH:mm:ss Z').format('YYYY-MM-DDTHH:mm:ss');
 
             var dd = picker.value.getDate();

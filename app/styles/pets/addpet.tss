@@ -55,7 +55,7 @@
     right: 10
 }
 "#genderbox":{
-    layout: 'horizontal'
+    left: 80
 }
 "#genderlbl":{
     left: 0,
@@ -70,7 +70,7 @@
     textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT
 }
 "#animaltypebox":{
-    layout: 'horizontal'
+    left: 80
 }
 "#animaltypelbl":{
     left: 0,

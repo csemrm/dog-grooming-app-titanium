@@ -4,6 +4,7 @@ var restapi = require('/restapi');
 var assets = require('/assets');
 var indicator = require("/indicator");
 var radio = require('/myTiRadioButton');
+var ref = args.ref || 'signup';
 indicator_win = new indicator();
 var config = Ti.App.Properties.getObject('config', {});
 var logoImg = config.images[0].path;
@@ -66,7 +67,7 @@ function onSubmit(e) {
     };
 
     Ti.API.info('_data  ' + JSON.stringify(_data));
-    if (petname && weight && type && gender && weight && bread && appuser_id) {
+    if (petname && weight && animaltype && gender && weight && bread && appuser_id) {
 
         restapi.addpet(_data, function(data) {
             if (data.error === true) {
@@ -80,8 +81,17 @@ function onSubmit(e) {
             } else {
                 Ti.API.info('get config' + JSON.stringify(data));
                 indicator_win.close();
-                var addpet = Alloy.createController('home', {}).getView();
-                addpet.open();
+                if (ref === 'home') {
+
+                    Ti.App.fireEvent('reload:lsit', {
+                        source : {
+                            id : 0
+                        }
+                    });
+                } else {
+                    var addpet = Alloy.createController('home', {}).getView();
+                    addpet.open();
+                }
             }
         }, function() {
             indicator_win.close();

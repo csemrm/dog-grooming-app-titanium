@@ -47,3 +47,9 @@ function inti() {
 }
 
 inti();
+
+function setAppointments() {
+    Alloy.createController('appointment/addWin', {
+        dogId : dog.id
+    }).getView().open();
+}

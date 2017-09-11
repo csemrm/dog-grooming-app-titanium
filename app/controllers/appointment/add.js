@@ -15,8 +15,10 @@ var radio = require('/myTiRadioButton');
 var indicator = require("/indicator");
 var user = Ti.App.Properties.getObject('user', {});
 var config = Ti.App.Properties.getObject('config', {});
+var promo_id = args.promo_id || '';
+var appuser_id = user.id;
 indicator_win = new indicator();
-var dogId;
+var dogId = args.dogId || '';
 var gender_opts = radio.createCheckBoxButtonGroup({
     groupId : 1,
     width : 150,
@@ -52,7 +54,61 @@ function selectpet(e) {
 }
 
 function onSubmit(e) {
+    var date = $.date.value;
+    var time = $.time.value;
+    var note = (gender_opts.selectedValue).toString();
 
+    var _data = {
+        resv_date : date,
+        resv_time : time,
+        note : note,
+        user_id : appuser_id,
+        promo_id : promo_id || '',
+        dog_id : dogId,
+        user_email : user.email || '',
+        user_phone_no : user.phone || '',
+        user_name : user.username || '',
+        status_id : 1
+    };
+
+    Ti.API.info('_data  ' + JSON.stringify(_data));
+    if (dogId && date && time && note) {
+
+        restapi.reservations(_data, function(data) {
+            if (data.error === true) {
+                var param = {
+                    buttonNames : ['Ok'],
+                    message : data.message,
+                    callback : function(e) {
+                    }
+                };
+                assets.alertMsg(param);
+            } else {
+                Ti.API.info('get config' + JSON.stringify(data));
+                indicator_win.close();
+                var param = {
+                    buttonNames : ['Ok'],
+                    message : data.message,
+                    callback : function(e) {
+                    }
+                };
+                assets.alertMsg(param);
+            }
+        }, function() {
+            indicator_win.close();
+            Alloy.createController('error/noapi', {}).getView().open();
+
+        });
+
+    } else {
+        var param = {
+            buttonNames : ['Ok'],
+            message : "All Feild required",
+            callback : function(e) {
+            }
+        };
+        assets.alertMsg(param);
+    }
 }
 
 function loaddogs(user) {
@@ -79,11 +135,13 @@ function displayloaddogs(dogs) {
         var dog = dogs[i];
         var dogdisplay = Alloy.createController('pets/dog', {
             dog : dog,
+            dogId : dogId,
             isFev : false,
             isEditable : false
         }).getView();
         $.dogcontainner.add(dogdisplay);
     }
+
 }
 
 loaddogs(user);

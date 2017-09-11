@@ -140,4 +140,29 @@ exports.addpet = function(data, callback) {
     xhr.open('POST', encodeURI(url));
     xhr.send(data);
 
-}; 
+};
+
+exports.reservations = function(data, callback) {
+
+    //indicator_win.open();
+    var xhr = Ti.Network.createHTTPClient({
+        onload : function() {
+            //indicator_win.close();
+            Ti.API.info('this.responseText ' + this.responseText);
+            json = JSON.parse(this.responseText);
+            callback(json);
+        },
+        onerror : function(e) {
+            //indicator_win.close();
+            Ti.API.info('this.responseText onerror' + this.responseText);
+        },
+        timeout : 50000
+    });
+
+    Ti.API.info('data ' + JSON.stringify(data));
+    var url = restURL + 'reservations/add';
+    Ti.API.info('url ' + url);
+    xhr.open('POST', encodeURI(url));
+    xhr.send(data);
+
+};
