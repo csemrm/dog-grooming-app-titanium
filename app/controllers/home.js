@@ -9,6 +9,8 @@
 var args = $.args;
 var restapi = require('/restapi');
 var assets = require('/assets');
+
+var pushnoification = require('/pushnoification');
 var user = Ti.App.Properties.getObject('user', {});
 inti();
 

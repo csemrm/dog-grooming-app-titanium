@@ -38,27 +38,25 @@
                 <false/>
                 <key>UIStatusBarStyle</key>
                 <string>UIStatusBarStyleDefault</string>
-                
                 <key>CFBundleURLTypes</key>
                 <array>
-                  <dict>
-                  <key>CFBundleURLSchemes</key>
-                  <array>
-                    <string>fb1971246159827483</string>
-                  </array>
-                  </dict>
+                    <dict>
+                        <key>CFBundleURLSchemes</key>
+                        <array>
+                            <string>fb1971246159827483</string>
+                        </array>
+                    </dict>
                 </array>
                 <key>FacebookAppID</key>
                 <string>1971246159827483</string>
                 <key>FacebookDisplayName</key>
                 <string>WoodlesApp</string>
-                
                 <key>LSApplicationQueriesSchemes</key>
                 <array>
-                  <string>fbapi</string>
-                  <string>fb-messenger-api</string>
-                  <string>fbauth2</string>
-                  <string>fbshareextension</string>
+                    <string>fbapi</string>
+                    <string>fb-messenger-api</string>
+                    <string>fbauth2</string>
+                    <string>fbshareextension</string>
                 </array>
                 <key>NSPhotoLibraryUsageDescription</key>
                 <string>Can we use your Photo Library?</string>
@@ -70,23 +68,48 @@
         </plist>
     </ios>
     <android xmlns:android="http://schemas.android.com/apk/res/android">
-        <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.softvalleysolutions.woodlesapp" android:versionCode="1" android:versionName="1.0">
+        <manifest android:versionCode="1" android:versionName="1.0"
+            package="com.softvalleysolutions.woodlesapp" xmlns:android="http://schemas.android.com/apk/res/android">
             <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="23"/>
-            <application android:icon="@drawable/appicon" android:label="WoodlesApp" android:name="WoodlesappApplication" android:debuggable="false" android:theme="@style/Theme.AppCompat" android:hardwareAccelerated="false" android:largeHeap="true">
-                <activity android:name=".WoodlesappActivity" android:label="@string/app_name" android:theme="@style/Theme.Titanium" android:configChanges="keyboardHidden|orientation|screenSize" android:screenOrientation="portrait" >
+            <application android:debuggable="false"
+                android:hardwareAccelerated="false"
+                android:icon="@drawable/appicon"
+                android:label="WoodlesApp" android:largeHeap="true"
+                android:name="WoodlesappApplication" android:theme="@style/Theme.AppCompat">
+                <activity
+                    android:configChanges="keyboardHidden|orientation|screenSize"
+                    android:label="@string/app_name"
+                    android:name=".WoodlesappActivity"
+                    android:screenOrientation="portrait" android:theme="@style/Theme.Titanium">
                     <intent-filter>
                         <action android:name="android.intent.action.MAIN"/>
                         <category android:name="android.intent.category.LAUNCHER"/>
                     </intent-filter>
                 </activity>
-                <activity android:name="org.appcelerator.titanium.TiActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:screenOrientation="portrait"/>
-                <activity android:name="org.appcelerator.titanium.TiTranslucentActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Translucent"/>
-                <activity android:name="ti.modules.titanium.ui.android.TiPreferencesActivity" android:configChanges="screenSize"/>
-                <activity android:name="ti.modules.titanium.media.TiCameraActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Translucent.NoTitleBar.Fullscreen"/>
-                <activity android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:label="WoodlesApp" android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"/>
-                <activity android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateAlwaysHidden|adjustPan" android:configChanges="screenSize"/>
-                <provider android:name="org.appcelerator.titanium.io.TiFileProvider" android:authorities="com.softvalleysolutions.woodlesapp.tifileprovider" android:exported="false" android:grantUriPermissions="true"/>
-                <service android:name="com.appcelerator.aps.APSAnalyticsService" android:exported="false"/>
+                <activity
+                    android:configChanges="keyboardHidden|orientation|screenSize"
+                    android:name="org.appcelerator.titanium.TiActivity" android:screenOrientation="portrait"/>
+                <activity
+                    android:configChanges="keyboardHidden|orientation|screenSize"
+                    android:name="org.appcelerator.titanium.TiTranslucentActivity"
+                    android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Translucent"/>
+                <activity android:configChanges="screenSize" android:name="ti.modules.titanium.ui.android.TiPreferencesActivity"/>
+                <activity
+                    android:configChanges="keyboardHidden|orientation|screenSize"
+                    android:name="ti.modules.titanium.media.TiCameraActivity"
+                    android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Translucent.NoTitleBar.Fullscreen"/>
+                <activity
+                    android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+                    android:label="WoodlesApp"
+                    android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+                <activity android:configChanges="screenSize"
+                    android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+                    android:screenOrientation="portrait" android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
+                <provider
+                    android:authorities="com.softvalleysolutions.woodlesapp.tifileprovider"
+                    android:exported="false"
+                    android:grantUriPermissions="true" android:name="org.appcelerator.titanium.io.TiFileProvider"/>
+                <service android:exported="false" android:name="com.appcelerator.aps.APSAnalyticsService"/>
                 <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
                 <meta-data android:name="com.google.android.gms.version" android:value="10298000"/>
             </application>
@@ -118,6 +141,8 @@
         <module platform="iphone">ti.imagefactory</module>
         <module platform="android">ti.imagefactory</module>
         <module platform="iphone">dk.napp.social</module>
+        <module platform="android">br.com.arlsoft.pushclient</module>
+        <module platform="iphone">br.com.arlsoft.pushclient</module>
     </modules>
     <deployment-targets>
         <target device="android">true</target>
