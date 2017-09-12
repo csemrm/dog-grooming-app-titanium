@@ -16,6 +16,7 @@ var indicator = require("/indicator");
 var user = Ti.App.Properties.getObject('user', {});
 var config = Ti.App.Properties.getObject('config', {});
 var promo_id = args.promo_id || '';
+
 var appuser_id = user.id;
 indicator_win = new indicator();
 var dogId = args.dogId || '';
@@ -90,6 +91,9 @@ function onSubmit(e) {
                     buttonNames : ['Ok'],
                     message : data.message,
                     callback : function(e) {
+                        if (promo_id) {
+                            args.win.close();
+                        }
                     }
                 };
                 assets.alertMsg(param);
@@ -163,7 +167,7 @@ function openDatePicker() {
         var picker_view = assets.timeanddate_picker('date', $.date, $.add);
         $.add.add(picker_view);
     } else {
-        assets.androidPicker($.add);
+         assets.androidPicker('date', $.date);
     }
 
 }

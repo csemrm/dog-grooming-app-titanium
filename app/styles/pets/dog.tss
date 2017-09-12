@@ -10,7 +10,9 @@
     borderColor: Alloy.CFG.apptheme.color_white
 }
 "#imgdog":{
-    touchEnabled: false
+    touchEnabled: false,
+    width: Titanium.UI.FILL,
+    height: Titanium.UI.FILL
 }
 "#dogname":{
     top: 0,

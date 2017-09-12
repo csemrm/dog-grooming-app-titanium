@@ -21,6 +21,7 @@ function openSignup() {
     var signup = Alloy.createController('auth/signup', {}).getView();
     signup.open();
 }
+
 //2889474
 function loginWithFB() {
 
@@ -32,11 +33,11 @@ function loginWithTW() {
         consumerSecret : Alloy.CFG.consumerSecret,
         consumerKey : Alloy.CFG.consumerKey
     });
-/*
-    social.authorize(function(data) {
-        Ti.API.info('social data ' + JSON.stringify(data));
-    });
-*/
+    /*
+     social.authorize(function(data) {
+     Ti.API.info('social data ' + JSON.stringify(data));
+     });
+     */
 }
 
 function onSubmit() {
@@ -77,7 +78,7 @@ fb.addEventListener('login', function(e) {
         user.logintype = 'facebook';
         Ti.API.info('Logged In = ' + (e.data));
         Ti.App.Properties.setObject('user', user);
-        var home = Alloy.createController('home', {}).getView();
+        var home = Alloy.createController('auth/signuppetadd', {}).getView();
         home.open();
     } else if (e.cancelled) {
         Ti.API.info('cancelled');

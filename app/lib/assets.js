@@ -297,7 +297,7 @@ exports.androidPicker = function(type, selectText, value) {
         });
 
         picker.showDatePickerDialog({
-            //value : value,
+            value : new Date(),
             callback : function(e) {
                 if (e.cancel) {
 
@@ -323,46 +323,17 @@ exports.androidPicker = function(type, selectText, value) {
         });
 
         picker.showTimePickerDialog({
-            value : value,
+            value : new Date(),
             callback : function(e) {
                 if (e.cancel) {
 
                     Ti.API.info('User canceled diaTi.API.info');
                 } else {
+                    Ti.API.info('picker.value.getHours' + e.value);
+                    var value;
 
-                    var value,
-                        hours,
-                        flag,
-                        minutes;
-                    if (picker.value.getHours() < 10) {
-
-                        hours = "0" + picker.value.getHours();
-                        flag = 'AM';
-
-                    } else {
-                        if (picker.value.getHours() < 12) {
-                            hours = picker.value.getHours();
-                            flag = 'AM';
-                        } else {
-                            hours = "0" + (picker.value.getHours() - 12);
-                            flag = 'PM';
-                        }
-                    }
-                    if (picker.value.getMinutes() < 30) {
-                        minutes = "00";
-                    } else
-                        minutes = picker.value.getMinutes();
-                    value = hours + ':' + minutes + ' ' + flag;
-
-                    selectText.value = value;
-
-                    var dd = picker.value.getDate();
-                    var mm = picker.value.getMonth();
-                    var yy = picker.value.getFullYear();
-                    var d = new Date(picker.value);
-                    var hour = d.getHours();
-                    var min = d.getMinutes();
-
+                    selectText.value = moment(e.value.toString(), 'ddd MMM DD YYYY HH:mm:ss Z').format('hh:mm A');
+                    ;
                 }
             }
         });

@@ -11,4 +11,5 @@ function inti() {
     });
 }
 
+args.win = $.addWin;
 $.mapContainner.add(Alloy.createController('appointment/add', args).getView());

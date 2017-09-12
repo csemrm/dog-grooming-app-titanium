@@ -122,7 +122,7 @@ function goNext(e) {
 function openPicker() {
     var value = new moment();
     if (OS_IOS) {
-        var picker_view = assets.timeanddate_picker('date', $.dob, $.signup, value);
+        var picker_view = assets.timeanddate_picker('date', $.dob, $.signup);
         $.signup.add(picker_view);
     } else {
         assets.androidPicker('date', $.dob, value);
