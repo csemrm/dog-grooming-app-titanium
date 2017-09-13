@@ -188,7 +188,7 @@
 
 
 "#next":{
-    image: '/buttons/button.png',
+    image: '/buttons/next-button.png',
     width: 240,
     height:Ti.UI.SIZE
 }

@@ -7,7 +7,7 @@
 
 "#logo":{
     defaultImage: '/others/logo.png',
-    width: 150,
+    width: 120,
     height:Ti.UI.SIZE,
     top: 40
 }
@@ -17,7 +17,7 @@
     height: 280,
     borderRadius: 10,
     backgroundColor: Alloy.CFG.apptheme.color_white,
-    bottom: 90
+    bottom: 70
 }
 
 "#downarrowicon":{
@@ -69,7 +69,7 @@
     right: 10
 }
 "#signup":{
-    image: '/buttons/button.png',
+    image: '/buttons/signup.png',
     width: 120,
     height:Ti.UI.SIZE,
     left: 0
@@ -78,7 +78,10 @@
     image: '/buttons/button.png',
     width: 120,
     height:Ti.UI.SIZE,
-    right: 0
+    right: 0,
+    font:{
+        fontSize: 20
+    }
 }
 "#logindiver":{
     height: Titanium.UI.SIZE
@@ -109,12 +112,12 @@
 "#facebook":{
     image: '/buttons/fb.png',
     width: 120,
-    height:Ti.UI.SIZE,
-    left: 0
+    height:Ti.UI.SIZE
 }
 "#twitter":{
     image: '/buttons/twitter.png',
-    width: 120,
+    width: 0,
     height:Ti.UI.SIZE,
-    right: 0
+    right: 0,
+    visible: false
 }

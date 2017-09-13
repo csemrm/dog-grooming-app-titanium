@@ -1,6 +1,6 @@
 <Alloy>
     <Window  id="main" >
-        <Require type="widget" src="com.csemrm.navigationBar" image="/icons/logo-white.png" textAlign="left" id="navigationBar" />
+        <!--Require type="widget" src="com.csemrm.navigationBar" textAlign="left" id="navigationBar" /-->
         <View id="mapContainner"></View>
         <Require type="widget" src="com.csemrm.tabs" id="Tabs" />
 

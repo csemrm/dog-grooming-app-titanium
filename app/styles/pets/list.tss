@@ -7,3 +7,12 @@
     layout: 'horizontal',
     backgroundColor: Alloy.CFG.apptheme.MainColor
 }
+"#addpetbtn":{
+    backgroundColor: Alloy.CFG.apptheme.MainColor,
+    width: 50,
+    height: 50,
+    bottom: 10,
+    left: 10,
+    title: 'Add Pet',
+    borderRadius: 25
+}

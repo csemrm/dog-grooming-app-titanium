@@ -1,6 +1,6 @@
 <Alloy>
 	<Window class="container" id="petdetail">
-		<Require type="widget" src="com.csemrm.navigationBar" image="/icons/logo-white.png" textAlign="left" id="navigationBar" />
+		<!--Require type="widget" src="com.csemrm.navigationBar" image="/icons/logo-white.png" textAlign="left" id="navigationBar" /-->
 		<ScrollView id="mapContainner">
 			<View  id="dogdisply">
 				<ImageView id="imgdog">

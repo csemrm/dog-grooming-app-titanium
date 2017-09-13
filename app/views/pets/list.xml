@@ -2,5 +2,7 @@
 	<View class="container">
 		<ScrollView id="dogcontainner" onClick="opnePetDetail">
 		</ScrollView>
+		<Button id="addpetbtn">
+		</Button>
 	</View>
 </Alloy>

@@ -9,10 +9,8 @@
 var args = $.args;
 var restapi = require('/restapi');
 var assets = require('/assets');
-
-var pushnoification = require('/pushnoification');
 var user = Ti.App.Properties.getObject('user', {});
-inti();
+//inti();
 
 function inti() {
     $.navigationBar.setBackgroundColor(Alloy.CFG.apptheme.top_nev_bar_bg);
@@ -35,25 +33,25 @@ function inti() {
 
 var tabs = [{
     id : 0,
-    title : ('My Pets'),
+    title : ('Home'),
     icon : "/icons/xlarge_icons.png",
     activeicon : "/icons/xlarge_icons-o.png",
     controller : 'pets/list'
 }, {
     id : 1,
-    title : ('Add Pets'),
-    icon : "/icons/dog1.png",
-    activeicon : "/icons/dog1-o.png",
-    controller : 'pets/addpet'
-}, {
-    id : 2,
     title : ('Appointments'),
     icon : "/icons/planner.png",
     activeicon : "/icons/planner-o.png",
     controller : 'appointment/add'
 }, {
+    id : 2,
+    title : ('My Pets'),
+    icon : "/icons/xlarge_icons.png",
+    activeicon : "/icons/xlarge_icons-o.png",
+    controller : 'pets/list'
+}, {
     id : 3,
-    title : ('Promotions'),
+    title : ('Specials'),
     icon : "/icons/advertising.png",
     activeicon : "/icons/advertising-o.png",
     controller : 'promotions/list'

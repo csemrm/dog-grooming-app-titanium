@@ -46,7 +46,7 @@ function inti() {
 
 }
 
-inti();
+//inti();
 
 function setAppointments() {
     Alloy.createController('appointment/addWin', {

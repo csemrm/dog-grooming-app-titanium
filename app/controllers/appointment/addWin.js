@@ -1,7 +1,7 @@
 // Arguments passed into this controller can be accessed via the `$.args` object directly or:
 var args = $.args;
 
-inti();
+//inti();
 
 function inti() {
     $.navigationBar.setBackgroundColor(Alloy.CFG.apptheme.top_nev_bar_bg);

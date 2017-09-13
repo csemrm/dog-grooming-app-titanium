@@ -141,8 +141,6 @@
         <module platform="iphone">ti.imagefactory</module>
         <module platform="android">ti.imagefactory</module>
         <module platform="iphone">dk.napp.social</module>
-        <module platform="android">br.com.arlsoft.pushclient</module>
-        <module platform="iphone">br.com.arlsoft.pushclient</module>
     </modules>
     <deployment-targets>
         <target device="android">true</target>

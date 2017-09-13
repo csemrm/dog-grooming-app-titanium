@@ -44,6 +44,10 @@ var animaltype_opts = radio.createRadioButtonGroup({
     labelColor : Alloy.CFG.apptheme.input_text_color,
 });
 $.animaltypebox.add(animaltype_opts);
+
+animaltype_opts.addEventListener('click', function(e) {
+    Ti.API.info('animaltype_opts ');
+});
 function PhotoOptionDialog() {
     assets.PhotoOptionDialog($.dogpic);
 }
@@ -63,7 +67,7 @@ function onSubmit(e) {
         weight : weight,
         bread : bread,
         appuser_id : appuser_id,
-        image : $.dogpic.toImage()
+        //image : $.dogpic.toImage()
     };
 
     Ti.API.info('_data  ' + JSON.stringify(_data));

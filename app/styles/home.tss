@@ -3,7 +3,7 @@
     height: Ti.UI.FILL
 }
 "#mapContainner":{
-    top: 66,
+    top: 20,
     bottom: 60,
     width: Ti.UI.FILL,
     height: Ti.UI.FILL,

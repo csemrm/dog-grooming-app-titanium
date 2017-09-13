@@ -32,9 +32,9 @@ if (OS_IOS) {
 var PushClient = Alloy.Globals.PushClient;
 var xhr = require("/restapi");
 var assets = require('/assets');
-
+//AAAAJn_sD5E:APA91bGGGyObkPCHPmobeywCoHyns_nmIFK3P6lw-vx6zT22jop3PTFn5QqSUUKK4MldhO3wAWGNNGdPm9pR9gg-mjCjRD504BdqMOtSFIEvo4ry6tj0Lvf0HTr0zryn764H-wNZ3D3m
 var registerOptions = {
-    GCMSenderId : 'GCMSenderId',
+    GCMSenderId : '165354934161',
     APNTypes : [PushClient.NOTIFICATION_TYPE_BADGE, PushClient.NOTIFICATION_TYPE_ALERT, PushClient.NOTIFICATION_TYPE_SOUND]
 };
 
@@ -58,7 +58,7 @@ if (OS_IOS) {
         actionsForMinimalContext : [acceptAction, rejectAction],
         actionsForDefaultContext : [acceptAction, rejectAction]
     });
-    registerOptions.Categories = [downloadContent];
+    //registerOptions.Categories = [downloadContent];
 }
 
 // Valid APNTypes (for iOS):
@@ -107,8 +107,8 @@ var eventSuccess = function(event) {
         "DeviceToken" : event.registrationId
     }, function(results) {
         var response = JSON.parse(results);
-        assets.log("RESPONSE: " + response);
-        Ti.App.Properties.setString('UserDeviceId', response.Data.UserDeviceId);
+        Ti.API.info("RESPONSE: " + response);
+        Ti.App.Properties.setString('UserDeviceId', response.UserDeviceId);
     }, function(results) {
     });
 

@@ -7,7 +7,7 @@
             "color_black": "#000",
             "color_dark": "#ECEFF1",
             "bg_color": "#F87276",
-            "submit_bg_color": "#F87276",
+            "submit_bg_color": "",
             "title_color": "#ffffff",
             "subtitle_color": "#5a7d7c",
             "address_color": "#484a4c",
