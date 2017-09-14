@@ -2,7 +2,7 @@
     backgroundColor: Alloy.CFG.apptheme.color_white,
     top: 5,
     width: 120,
-    height: 80,
+    height: 110,
     layout: 'vertical',
     left: 9,
     borderWidth: 2,
@@ -14,7 +14,7 @@
     width: Titanium.UI.FILL,
     height: Titanium.UI.FILL
 }
-"#dogname":{
+"#petname":{
     top: 0,
     height: 20,
     color: Alloy.CFG.apptheme.color_black,

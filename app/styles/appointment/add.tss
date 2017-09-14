@@ -1,27 +1,57 @@
 '.container':{
-    backgroundImage: '/images/background.png',
     backgroundColor: Alloy.CFG.apptheme.MainColor,
     width: Ti.UI.FILL,
     height: Ti.UI.FILL
 }
 "#dogcontainner":{
+    top: 8,
     backgroundColor: Alloy.CFG.apptheme.MainColor,
-    top: 10,
+    backgroundImage: '/images/shadowbg.png',
     width: Ti.UI.FILL,
-    contentHeight: 90,
-    contentWidth: Ti.UI.SIZE,
-    height: 90,
-    disableBounce: true,
-    layout: 'horizontal'
+    height: Ti.UI.SIZE,
+    disableBounce: true
+}
+"#edit":{
+    right: 8,
+    top: 8,
+    image: '/icons/share.png',
+    borderRadius: 10,
+    width: 20,
+    height: 20,
+    zIndex: 100
+}
+"#share":{
+    right: 8,
+    bottom: 8,
+    image: '/icons/share.png',
+    borderRadius: 15,
+    width: 30,
+    height: 30,
+    zIndex: 100
+}
+
+"#imgdog":{
+    width: Ti.UI.FILL,
+    right: 20,
+    height: Titanium.UI.SIZE,
+    left: 20
+}
+"#dogname":{
+    top: 20,
+    height: 18,
+    left: 20,
+    color: Alloy.CFG.apptheme.color_black,
+    font:{
+        fontSize: 16
+    },
+    textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
+    touchEnabled: false
 }
 
 "#login_container":{
     layout: 'vertical',
-    width: 280,
-    borderRadius: 10,
-    backgroundColor: Alloy.CFG.apptheme.color_white,
-    bottom: 30,
-    top: 110,
+    width: Ti.UI.FILL,
+    height: Ti.UI.FILL,
     disableBounce: true
 }
 
@@ -55,6 +85,7 @@
 "#genderlbl":{
     left: 0,
     top: 5,
+    visible: false,
     width: 40,
     text: "For a:",
     color: Alloy.CFG.apptheme.input_text_color,
@@ -81,11 +112,17 @@
 
 "#date":{
     top: 2,
-    hintText: 'Date',
     left: 0,
     width: 120,
     editable: false,
-    returnKeyType:Titanium.UI.RETURNKEY_NEXT
+    text: 'Date',
+    height: 40,
+    borderWidth: 1,
+    borderColor: Alloy.CFG.apptheme.input_text_color,
+    font:{
+        fontSize: 12
+    },
+    textAlign:Titanium.UI.TEXT_ALIGNMENT_CENTER
 }
 "#dateicon":{
     image: '/icons/tear_off_calendar.png',
@@ -100,8 +137,14 @@
     width: 120,
     right: 0,
     editable: false,
-    hintText: 'HH:MM',
-    returnKeyType:Titanium.UI.RETURNKEY_NEXT
+    text: 'HH:MM',
+    height: 40,
+    borderWidth: 1,
+    borderColor: Alloy.CFG.apptheme.input_text_color,
+    font:{
+        fontSize: 12
+    },
+    textAlign:Titanium.UI.TEXT_ALIGNMENT_CENTER
 }
 "#timeicon":{
     image: '/icons/time.png',

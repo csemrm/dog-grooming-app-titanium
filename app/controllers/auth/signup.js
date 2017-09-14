@@ -54,7 +54,7 @@ function goNext(e) {
     var password = $.password.value;
     var cpassword = $.cpassword.value;
 
-    var dob = $.dob.value;
+    var dob = $.dob.text || '';
     var gender = Array.isArray(gender_opts.selectedValue) ? gender_opts.selectedValue[0] : '';
     var address = $.address.value;
     var city = $.city.value;

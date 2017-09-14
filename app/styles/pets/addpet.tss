@@ -16,7 +16,7 @@
     width: 280,
     borderRadius: 10,
     backgroundColor: Alloy.CFG.apptheme.color_white,
-    bottom: 0,
+    bottom: 30,
     top: 100,
     disableBounce: true
 }
@@ -44,7 +44,7 @@
     top: 10,
     left: 20,
     right: 20,
-    hintText: 'Your pet name',
+    hintText: 'Your pet\'s name',
     returnKeyType:Titanium.UI.RETURNKEY_NEXT,
     keyboardType:  Titanium.UI.KEYBOARD_TYPE_DEFAULT
 }
@@ -177,5 +177,5 @@
 }
 "#dogpic":{
     width: 100,
-    height:Ti.UI.SIZE
+    height: 100
 }

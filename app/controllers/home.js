@@ -34,9 +34,9 @@ function inti() {
 var tabs = [{
     id : 0,
     title : ('Home'),
-    icon : "/icons/xlarge_icons.png",
-    activeicon : "/icons/xlarge_icons-o.png",
-    controller : 'pets/list'
+    icon : "/icons/home.png",
+    activeicon : "/icons/home-o.png",
+    controller : 'pets/home'
 }, {
     id : 1,
     title : ('Appointments'),
@@ -76,8 +76,11 @@ function handleTabClick(_event) {
     if ( typeof _event.source.id !== "undefined") {
         $.Tabs.setIndex(_event.source.id);
         $.mapContainner.removeAllChildren();
+        var ref = _event.source.ref || 'home';
         var controller = Alloy.createController(tabs[_event.source.id].controller, {
-            ref : 'home'
+            ref : ref,
+            dog : _event.source.dog || {},
+            dogId : _event.source.dogId || ''
         }).getView();
         $.mapContainner.add(controller);
     }

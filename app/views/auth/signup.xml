@@ -20,9 +20,9 @@
                 <ImageView class="passicon"></ImageView>
             </TextField>
             <View class="otherLoginView">
-                <TextField id="dob" onClick="openPicker">
+                <Label id="dob" onClick="openPicker">
                     <ImageView id="calicon"></ImageView>
-                </TextField>
+                </Label>
                 <View id="gender"></View>
             </View>
             <TextArea id="address">

@@ -16,10 +16,22 @@ var indicator = require("/indicator");
 var user = Ti.App.Properties.getObject('user', {});
 var config = Ti.App.Properties.getObject('config', {});
 var promo_id = args.promo_id || '';
+var dog = args.dog || {};
 
 var appuser_id = user.id;
 indicator_win = new indicator();
 var dogId = args.dogId || '';
+
+Ti.API.info('dog' + JSON.stringify(dog));
+var images = [];
+var dogimages = dog.images || [];
+for (var i = 0,
+    j = dogimages.length; i < j; i++) {
+    images.push(Alloy.CFG.assets + dogimages[i].path);
+};
+$.imgdog.images = images;
+$.imgdog.start();
+
 var gender_opts = radio.createCheckBoxButtonGroup({
     groupId : 1,
     width : 150,
@@ -35,24 +47,7 @@ var gender_opts = radio.createCheckBoxButtonGroup({
     radioItemsHeight : 16,
     labelColor : Alloy.CFG.apptheme.input_text_color,
 });
-$.genderbox.add(gender_opts);
-
-function selectpet(e) {
-    Ti.API.info('selectpet ' + JSON.stringify(e));
-
-    var views = $.dogcontainner.children;
-    for (var i = 0,
-        j = views.length; i < j; i++) {
-        $.dogcontainner.children[i].borderColor = Alloy.CFG.apptheme.color_white;
-        Ti.API.info('e.source.id' + JSON.stringify($.dogcontainner.children[i]));
-    };
-
-    if (e.source.id === 'dogdisply') {
-        e.source.borderColor = Alloy.CFG.apptheme.top_nev_bar_bg;
-        dogId = e.source.dog.id;
-        Ti.API.info('e.source.id' + dogId);
-    }
-}
+//$.genderbox.add(gender_opts);
 
 function onSubmit(e) {
     var date = $.date.value;
@@ -115,41 +110,6 @@ function onSubmit(e) {
     }
 }
 
-function loaddogs(user) {
-    var url = user.id;
-    indicator_win.open();
-    restapi.loaddogs(url, function(e) {
-        indicator_win.close();
-        Ti.API.info('e' + JSON.stringify(e));
-        if (e.success === true) {
-            var dogs = e.dogs;
-            displayloaddogs(dogs);
-        }
-    }, function() {
-        indicator_win.close();
-        var noapi = Alloy.createController('error/noapi', {}).getView().open();
-    });
-}
-
-function displayloaddogs(dogs) {
-    $.dogcontainner.removeAllChildren();
-    for (var i = 0,
-        j = dogs.length; i < j; i++) {
-
-        var dog = dogs[i];
-        var dogdisplay = Alloy.createController('pets/dog', {
-            dog : dog,
-            dogId : dogId,
-            isFev : false,
-            isEditable : false
-        }).getView();
-        $.dogcontainner.add(dogdisplay);
-    }
-
-}
-
-loaddogs(user);
-
 function openTimePicker() {
 
     if (OS_IOS) {
@@ -167,7 +127,7 @@ function openDatePicker() {
         var picker_view = assets.timeanddate_picker('date', $.date, $.add);
         $.add.add(picker_view);
     } else {
-         assets.androidPicker('date', $.date);
+        assets.androidPicker('date', $.date);
     }
 
 }

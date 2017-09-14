@@ -1,22 +1,21 @@
 <Alloy>
 	<View class="container" id="add">
-		<ScrollView id="dogcontainner" onClick="selectpet">
-		</ScrollView>
-		<View id="login_container" >
-			<ImageView id="downarrowicon">
-			</ImageView>
+		<View id="login_container">
+			<View id="dogcontainner">
+				<ImageView id="imgdog">
+					<ImageView id="edit">
+					</ImageView>
+					<ImageView id="share"/>
+				</ImageView>
+			</View>
 			<View class="otherLoginView">
-				<TextField id="date" onClick="openDatePicker">
+				<Label id="date" onClick="openDatePicker">
 					<ImageView id="dateicon">
 					</ImageView>
-				</TextField>
-				<TextField id="time" onClick="openTimePicker">
+				</Label>
+				<Label id="time" onClick="openTimePicker">
 					<ImageView id="timeicon">
 					</ImageView>
-				</TextField>
-			</View>
-			<View class="otherLoginView" id="genderbox" >
-				<Label id="genderlbl">
 				</Label>
 			</View>
 			<ImageView id="submit" onClick="onSubmit">

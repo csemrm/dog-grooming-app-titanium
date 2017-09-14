@@ -1,0 +1,58 @@
+'.container':{
+    width: Ti.UI.FILL,
+    height: Ti.UI.FILL
+}
+"#promo":{
+    width: 300,
+    top: 10,
+    backgroundColor: Alloy.CFG.apptheme.color_white,
+    height: Ti.UI.SIZE,
+    layout: 'vertical'
+}
+"#dogdisply": {
+    top: 0,
+    backgroundImage: '/images/promoshadowbg.png',
+    width: Ti.UI.FILL,
+    height: Ti.UI.SIZE,
+    layout: 'vertical'
+}
+"#imgdog":{
+    left: 8,
+    right: 8,
+    height: Ti.UI.SIZE,
+    top: 5,
+    bottom: 10,
+    touchEnabled: false
+}
+"#promodesc":{
+    top: 0,
+    left: 8,
+    right: 8,
+    height: 30,
+    color: Alloy.CFG.apptheme.color_black,
+    font:{
+        fontSize: 10
+    },
+    textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
+    touchEnabled: false
+}
+"#dogcontainner":{
+    backgroundColor:Alloy.CFG.apptheme.top_nev_bar_bg,
+    bottom: 10,
+    width: Ti.UI.FILL,
+    contentHeight: 120,
+    contentWidth: Ti.UI.SIZE,
+    height: 120,
+    disableBounce: true,
+    layout: 'horizontal'
+}
+"#schedule":{
+    bottom: 140,
+    height: 25,
+    text: "Schedule \n for",
+    color: Alloy.CFG.apptheme.input_text_color,
+    font:{
+        fontSize: 10
+    },
+    textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER
+}

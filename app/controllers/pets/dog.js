@@ -23,4 +23,4 @@ for (var i = 0,
     images.push(Alloy.CFG.assets + dog.images[i].path);
 };
 $.imgdog.image = images[0];
-//$.dogname.text = dog.name || 'dog.name';
+$.petname.text = dog.name || 'dog.name';

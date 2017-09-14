@@ -58,3 +58,8 @@ function opnePetDetail(e) {
         petdetailWin.open();
     }
 }
+
+function openAddWin() {
+    var addpet = Alloy.createController('auth/signuppetadd', {}).getView();
+    addpet.open();
+}

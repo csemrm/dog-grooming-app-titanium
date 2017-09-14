@@ -1,6 +1,4 @@
 <Alloy>
-	<Window class="container">
-		<Require src="pets/addpet">
-		</Require>
+	<Window class="container"> 
 	</Window>
 </Alloy>

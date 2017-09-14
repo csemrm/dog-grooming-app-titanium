@@ -5,6 +5,7 @@ var assets = require('/assets');
 var indicator = require("/indicator");
 var radio = require('/myTiRadioButton');
 var ref = args.ref || 'signup';
+var win = args.win || '';
 indicator_win = new indicator();
 var config = Ti.App.Properties.getObject('config', {});
 var logoImg = config.images[0].path;
@@ -46,7 +47,13 @@ var animaltype_opts = radio.createRadioButtonGroup({
 $.animaltypebox.add(animaltype_opts);
 
 animaltype_opts.addEventListener('click', function(e) {
-    Ti.API.info('animaltype_opts ');
+    Ti.API.info('animaltype_opts ' + animaltype_opts.selectedValue[0]);
+    var type = animaltype_opts.selectedValue[0] || '';
+    if (type === 'Dog') {
+        $.dogpic.image = '/images/avators-dog.png';
+    } else {
+        $.dogpic.image = '/images/avators-cat.png';
+    }
 });
 function PhotoOptionDialog() {
     assets.PhotoOptionDialog($.dogpic);
@@ -85,6 +92,9 @@ function onSubmit(e) {
             } else {
                 Ti.API.info('get config' + JSON.stringify(data));
                 indicator_win.close();
+                if (win !== '') {
+                    win.close();
+                }
                 if (ref === 'home') {
 
                     Ti.App.fireEvent('reload:lsit', {

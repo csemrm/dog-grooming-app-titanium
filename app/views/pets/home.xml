@@ -1,0 +1,16 @@
+<Alloy>
+	<View class="container">
+		<View id="promo">
+			<View  id="dogdisply">
+				<ImageView id="imgdog">
+				</ImageView>
+			</View>
+			<Label id="promodesc">
+			</Label>
+		</View>
+		<Label id="schedule">
+		</Label>
+		<ScrollView id="dogcontainner" onClick="selectpet">
+		</ScrollView>
+	</View>
+</Alloy>

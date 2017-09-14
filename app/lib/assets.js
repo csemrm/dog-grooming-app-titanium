@@ -304,7 +304,7 @@ exports.androidPicker = function(type, selectText, value) {
                     Ti.API.info('User canceled diaTi.API.info');
                 } else {
 
-                    selectText.value = moment(e.value.toString(), 'ddd MMM DD YYYY HH:mm:ss Z').format('DD/MM/YYYY');
+                    selectText.text = moment(e.value.toString(), 'ddd MMM DD YYYY HH:mm:ss Z').format('DD/MM/YYYY');
                     var dateDAn = {
                         dd : e.value.getDate(),
                         mm : e.value.getMonth(),
@@ -332,7 +332,7 @@ exports.androidPicker = function(type, selectText, value) {
                     Ti.API.info('picker.value.getHours' + e.value);
                     var value;
 
-                    selectText.value = moment(e.value.toString(), 'ddd MMM DD YYYY HH:mm:ss Z').format('hh:mm A');
+                    selectText.text = moment(e.value.toString(), 'ddd MMM DD YYYY HH:mm:ss Z').format('hh:mm A');
                     ;
                 }
             }
@@ -386,7 +386,7 @@ exports.timeanddate_picker = function(type, selectRow, addTo, value) {
     selectButton.addEventListener('click', function(e) {
         if (type == "date") {
             Ti.API.info('date ' + moment(picker.value.toString(), 'ddd MMM DD YYYY HH:mm:ss Z').format('DD/MM/YYYY'));
-            selectRow.value = moment(picker.value.toString(), 'ddd MMM DD YYYY HH:mm:ss Z').format('DD/MM/YYYY');
+            selectRow.text = moment(picker.value.toString(), 'ddd MMM DD YYYY HH:mm:ss Z').format('DD/MM/YYYY');
             selectRow.time_stamp = new moment(picker.value.toString(), 'ddd MMM DD YYYY HH:mm:ss Z').format('YYYY-MM-DDTHH:mm:ss');
 
             var dd = picker.value.getDate();
@@ -428,7 +428,7 @@ exports.timeanddate_picker = function(type, selectRow, addTo, value) {
                 minutes = picker.value.getMinutes();
             value = hours + ':' + minutes + ' ' + flag;
 
-            selectRow.value = value;
+            selectRow.text = value;
 
             var dd = picker.value.getDate();
             var mm = picker.value.getMonth();
@@ -436,8 +436,7 @@ exports.timeanddate_picker = function(type, selectRow, addTo, value) {
             var d = new Date(picker.value);
             var hour = d.getHours();
             var min = d.getMinutes();
-
-            console.log('Test====' + selectRow.timeStamp);
+ 
             addTo.remove(topView);
         }
     });

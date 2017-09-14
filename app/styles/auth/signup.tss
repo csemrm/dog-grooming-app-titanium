@@ -113,8 +113,13 @@
     focusable: false,
     left: 0,
     width: 120,
-    hintText: 'Date of Birth',
-    returnKeyType:Titanium.UI.RETURNKEY_NEXT
+    text: '    Date of Birth',
+    height: 40,
+    borderWidth: 1,
+    borderColor: Alloy.CFG.apptheme.input_text_color,
+    font:{
+        fontSize: 12
+    }
 }
 "#calicon":{
     image: '/icons/tear_off_calendar.png',
