@@ -1,25 +1,20 @@
 <Alloy>
-	<View class="container" id="add">
-		<View id="login_container">
-			<View id="dogcontainner">
-				<ImageView id="imgdog">
-					<ImageView id="edit">
-					</ImageView>
-					<ImageView id="share"/>
-				</ImageView>
-			</View>
-			<View class="otherLoginView">
-				<Label id="date" onClick="openDatePicker">
-					<ImageView id="dateicon">
-					</ImageView>
-				</Label>
-				<Label id="time" onClick="openTimePicker">
-					<ImageView id="timeicon">
-					</ImageView>
-				</Label>
-			</View>
-			<ImageView id="submit" onClick="onSubmit">
-			</ImageView>
-		</View>
-	</View>
+    <View class="container" id="add">
+        <View id="login_container">
+            <View id="dogcontainner">
+                <ImageView id="imgdog" onSwipe="changeDog"></ImageView>
+                <ImageView id="edit" onClick="editDog"></ImageView>
+                <ImageView id="share" onClick="shareDog"/>
+            </View>
+            <View class="otherLoginView">
+                <Label id="date" onClick="openDatePicker">
+                    <ImageView id="dateicon"></ImageView>
+                </Label>
+                <Label id="time" onClick="openTimePicker">
+                    <ImageView id="timeicon"></ImageView>
+                </Label>
+            </View>
+            <ImageView id="submit" onClick="onConfirmSubmit"></ImageView>
+        </View>
+    </View>
 </Alloy>

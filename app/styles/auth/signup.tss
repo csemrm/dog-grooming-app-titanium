@@ -116,6 +116,7 @@
     text: '    Date of Birth',
     height: 40,
     borderWidth: 1,
+    color: Alloy.CFG.apptheme.input_text_color,
     borderColor: Alloy.CFG.apptheme.input_text_color,
     font:{
         fontSize: 12

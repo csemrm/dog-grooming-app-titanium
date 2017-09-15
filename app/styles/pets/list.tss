@@ -8,6 +8,7 @@
     backgroundColor: Alloy.CFG.apptheme.MainColor
 }
 "#addpetbtn":{
+    backgroundColor: Alloy.CFG.apptheme.color_white,
     width: 50,
     height: 50,
     bottom: 10,

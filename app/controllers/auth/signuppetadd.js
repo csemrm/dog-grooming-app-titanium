@@ -2,5 +2,6 @@
 var args = $.args;
 
 $.signuppetadd.add(Alloy.createController('pets/addpet', {
-    win : $.signuppetadd
+    win : $.signuppetadd,
+    dog : args.dog
 }).getView());

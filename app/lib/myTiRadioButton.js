@@ -1,6 +1,7 @@
 exports.createRadioButtonGroup = function(arg) {
-    var selectedIndex = [];
-    var selectedValue = [];
+    var selectedIndex = arg.selectedIndex || [];
+    var selectedValue = arg.selectedValue || [];
+    Ti.API.info('selectedValue ' + selectedValue.toString());
     var self = Ti.UI.createView({
         width : arg.width,
         height : arg.height,
@@ -8,14 +9,14 @@ exports.createRadioButtonGroup = function(arg) {
         layout : arg.layout,
         top : 10,
         left : arg.left,
-        selectedIndex : [],
-        selectedValue : [],
+        selectedIndex : selectedIndex,
+        selectedValue : selectedValue,
     });
     Ti.API.info('arg.radioItemsValue' + arg.radioItemsValue);
     for (var i = 0,
         count = arg.radioItemsValue.length; i < count; i++) {
 
-        Ti.API.info('arg.radioItemsValue[i]' + arg.radioItemsValue[i]);
+        Ti.API.info('arg.radioItemsValue[i] ' + arg.radioItemsValue[i]);
         var radioItem = Ti.UI.createView({
 
             height : Ti.UI.SIZE,
@@ -30,9 +31,10 @@ exports.createRadioButtonGroup = function(arg) {
         var radioItemImage = Ti.UI.createImageView({
             width : arg.radioItemsWidth,
             height : arg.radioItemsHeight,
-            image : arg.radioItemsBackgroundImage,
+            image : selectedValue[0] == arg.radioItemsValue[i] ? arg.radioItemsBackgroundSelectedImage : arg.radioItemsBackgroundImage,
             id : i,
         });
+        Ti.API.info('selectedValue[0] === arg.radioItemsValue[i] ' + selectedValue[0] + ' == ' + arg.radioItemsValue[i]);
         radioItem.add(radioItemImage);
         if (arg.radioItemsValue[i] instanceof Object) {
 
@@ -114,8 +116,8 @@ exports.createRadioButtonGroup = function(arg) {
 };
 
 exports.createCheckBoxButtonGroup = function(arg) {
-    var selectedIndex = [];
-    var selectedValue = [];
+    var selectedIndex = arg.selectedIndex || [];
+    var selectedValue = arg.selectedValue || [];
     var self = Ti.UI.createView({
         width : arg.width,
         height : arg.height,
@@ -123,8 +125,8 @@ exports.createCheckBoxButtonGroup = function(arg) {
         layout : arg.layout,
         top : 5,
         left : arg.left,
-        selectedIndex : [],
-        selectedValue : [],
+        selectedIndex : selectedIndex,
+        selectedValue : selectedValue,
     });
     for (var i = 0,
         count = arg.radioItemsValue.length; i < count; i++) {
@@ -141,7 +143,7 @@ exports.createCheckBoxButtonGroup = function(arg) {
         var radioItemImage = Ti.UI.createImageView({
             width : arg.radioItemsWidth,
             height : arg.radioItemsHeight,
-            image : arg.radioItemsBackgroundImage,
+            image : selectedIndex === i ? arg.radioItemsBackgroundSelectedImage : arg.radioItemsBackgroundImage,
 
             left : 0,
             id : i,

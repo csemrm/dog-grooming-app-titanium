@@ -36,25 +36,29 @@ var tabs = [{
     title : ('Home'),
     icon : "/icons/home.png",
     activeicon : "/icons/home-o.png",
-    controller : 'pets/home'
+    controller : 'pets/home',
+    ref : 'pets_home',
 }, {
     id : 1,
     title : ('Appointments'),
     icon : "/icons/planner.png",
     activeicon : "/icons/planner-o.png",
-    controller : 'appointment/add'
+    controller : 'appointment/add',
+    ref : 'pets_home',
 }, {
     id : 2,
     title : ('My Pets'),
     icon : "/icons/xlarge_icons.png",
     activeicon : "/icons/xlarge_icons-o.png",
-    controller : 'pets/list'
+    controller : 'pets/list',
+    ref : 'pets_home',
 }, {
     id : 3,
     title : ('Specials'),
     icon : "/icons/advertising.png",
     activeicon : "/icons/advertising-o.png",
-    controller : 'promotions/list'
+    controller : 'promotions/list',
+    ref : 'pets_home',
 }];
 
 // Initialize the tab bar

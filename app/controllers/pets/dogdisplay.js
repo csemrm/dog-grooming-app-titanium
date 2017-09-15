@@ -18,9 +18,21 @@ $.dogdisply.width = '50%';
 $.imgdog.width = 148;
 $.imgdog.height = 160;
 $.dogdisply.dog = dog;
-for (var i = 0,
-    j = dog.images.length; i < j; i++) {
-    images.push(Alloy.CFG.assets + dog.images[i].path);
-};
-$.imgdog.image = images[0];
+
 $.dogname.text = dog.name || 'dog.name';
+loaddog(dog);
+function loaddog(dog) {
+    var dogimages = dog.images || [];
+    if (dogimages.length) {
+        for (var i = 0,
+            j = dogimages.length; i < j; i++) {
+            images.push(Alloy.CFG.assets + dogimages[i].path);
+        };
+        $.imgdog.images = images;
+        $.imgdog.start();
+    } else if (dog.type === 'Dog') {
+        $.imgdog.image = '/images/avators-dog.png';
+    } else if (dog.type === 'Cat') {
+        $.imgdog.image = '/images/avators-cat.png';
+    }
+}

@@ -6,12 +6,18 @@ var indicator = require("/indicator");
 var radio = require('/myTiRadioButton');
 var ref = args.ref || 'signup';
 var win = args.win || '';
+var dog = args.dog || {};
+var dogId = '';
+Ti.API.info('dog ' + JSON.stringify(args));
 indicator_win = new indicator();
 var config = Ti.App.Properties.getObject('config', {});
 var logoImg = config.images[0].path;
 $.logo.image = Alloy.CFG.assets + logoImg;
 var user = Ti.App.Properties.getObject('user', {});
 var appuser_id = user.id;
+
+loadDog(dog);
+
 var gender_opts = radio.createRadioButtonGroup({
     groupId : 1,
     width : 180,
@@ -26,9 +32,10 @@ var gender_opts = radio.createRadioButtonGroup({
     radioItemsWidth : 16,
     radioItemsHeight : Ti.UI.SIZE,
     labelColor : Alloy.CFG.apptheme.input_text_color,
+    selectedValue : gender_opts_selectedValue,
+
 });
 $.genderbox.add(gender_opts);
-
 var animaltype_opts = radio.createRadioButtonGroup({
     groupId : 1,
     width : 180,
@@ -43,6 +50,7 @@ var animaltype_opts = radio.createRadioButtonGroup({
     radioItemsWidth : 16,
     radioItemsHeight : Ti.UI.SIZE,
     labelColor : Alloy.CFG.apptheme.input_text_color,
+    selectedValue : animaltype_opts_selectedValue ,
 });
 $.animaltypebox.add(animaltype_opts);
 
@@ -76,6 +84,8 @@ function onSubmit(e) {
         appuser_id : appuser_id,
         //image : $.dogpic.toImage()
     };
+    if (dogId)
+        _data.id = dogId;
 
     Ti.API.info('_data  ' + JSON.stringify(_data));
     if (petname && weight && animaltype && gender && weight && bread && appuser_id) {
@@ -123,3 +133,28 @@ function onSubmit(e) {
         assets.alertMsg(param);
     }
 }
+
+function loadDog(dog) {
+    Ti.API.info('dog ' + JSON.stringify(dog));
+    dogId = dog.id;
+    $.petname.value = dog.name;
+    $.weight.value = dog.weight;
+    $.bread.value = dog.bread;
+    animaltype_opts_selectedValue = [dog.type];
+    gender_opts_selectedValue = [dog.gender];
+
+    var dogimages = dog.images || [];
+    if (dogimages.length) {
+        for (var i = 0,
+            j = dogimages.length; i < j; i++) {
+            images.push(Alloy.CFG.assets + dogimages[i].path);
+        };
+        $.dogpic.images = images;
+        $.dogpic.start();
+    } else if (dog.type === 'Dog') {
+        $.dogpic.image = '/images/avators-dog.png';
+    } else if (dog.type === 'Cat') {
+        $.dogpic.image = '/images/avators-cat.png';
+    }
+}
+
