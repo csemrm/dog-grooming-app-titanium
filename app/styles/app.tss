@@ -56,6 +56,17 @@ color: '#000' // all platforms except Android and Windows default to black
         fontSize: 12
     }
 }
+"TextField[platform=android]":{
+    softKeyboardOnFocus: Titanium.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS
+}
+"TextArea[platform=android]":{
+    softKeyboardOnFocus: Titanium.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS
+}
+
 "ImageView":{
     duration: 1000
+}
+
+"Label":{
+    color: Alloy.CFG.apptheme.input_text_color
 }

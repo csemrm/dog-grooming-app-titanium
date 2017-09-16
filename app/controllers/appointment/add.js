@@ -26,6 +26,7 @@ var direction = '';
 Ti.API.info('dog' + JSON.stringify(dog));
 var images = [];
 var itemIndex = 0;
+var win ;
 if (dogId)
     loaddog(dog);
 
@@ -83,6 +84,7 @@ function onSubmit(e) {
                     buttonNames : ['Ok'],
                     message : data.message,
                     callback : function(e) {
+                        win.close();
                         if (promo_id) {
                             args.win.close();
                         }
@@ -145,7 +147,8 @@ function loaddogs(user) {
                     }
                 };
             } else {
-                loaddog(dogs[0]);
+                dog = dogs[0];
+                loaddog(dog);
             }
         }
     }, function() {
@@ -280,7 +283,7 @@ function shareDog() {
 }
 
 function onConfirmSubmit(e) {
-    var win = Ti.UI.createWindow({
+    win = Ti.UI.createWindow({
         id : 'win',
         backgroundColor : "rgb(0,0,0,0.50)"
     });

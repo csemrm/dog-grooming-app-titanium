@@ -487,3 +487,50 @@ exports.timeanddate_picker = function(type, selectRow, addTo, value) {
 
     return topView;
 };
+
+var Utils = {
+    /* modified version of https://gist.github.com/1243697 */
+    _getExtension : function(fn) {
+        // from http://stackoverflow.com/a/680982/292947
+        var re = /(?:\.([^.]+))?$/;
+        var tmpext = re.exec(fn)[1];
+        return (tmpext) ? tmpext : '';
+    },
+    RemoteImage : function(a) {
+        a = a || {};
+        var md5;
+        var needsToSave = false;
+        var savedFile;
+        if (a.image) {
+            md5 = Ti.Utils.md5HexDigest(a.image) + this._getExtension(a.image);
+            savedFile = Titanium.Filesystem.getFile(Titanium.Filesystem.applicationDataDirectory, md5);
+            Ti.API.info('savedFile' + savedFile.nativePath);
+            if (savedFile.exists()) {
+                a.image = savedFile;
+            } else {
+                Ti.API.info('ddd' + needsToSave);
+                needsToSave = true;
+            }
+        }
+        var image = Ti.UI.createImageView(a);
+        Ti.API.info('needsToSave ' + JSON.stringify(image));
+        if (needsToSave === true) {
+            function saveImage(e) {
+                Ti.API.info('save Image  ');
+                image.removeEventListener('load', saveImage);
+                savedFile.write(Ti.UI.createImageView({
+                    image : image.image,
+                    width : Ti.UI.FILL,
+                    height : Ti.UI.SIZE
+                }).toImage());
+            }
+
+
+            image.addEventListener('load', saveImage);
+        }
+
+        //Ti.API.info('image ' + JSON.stringify(image));
+        return image;
+    }
+};
+exports.Utils = Utils;

@@ -1,47 +1,50 @@
 <Alloy>
     <Window class="container" id="signup">
-        <ImageView id="logo"></ImageView>
-        <ScrollView id="login_container" >
-            <ImageView id="downarrowicon"></ImageView>
-            <Label id="loginmessage"></Label>
-            <TextField id="name">
-                <ImageView id="nameicon"></ImageView>
-            </TextField>
-            <TextField id="phone">
-                <ImageView id="phoneicon"></ImageView>
-            </TextField>
-            <TextField id="emailaddress">
-                <ImageView id="emailicon"></ImageView>
-            </TextField>
-            <TextField id="password">
-                <ImageView class="passicon"></ImageView>
-            </TextField>
-            <TextField id="cpassword">
-                <ImageView class="passicon"></ImageView>
-            </TextField>
-            <View class="otherLoginView">
-                <Label id="dob" onClick="openPicker">
-                    <ImageView id="calicon"></ImageView>
-                </Label>
-                <View id="gender"></View>
-            </View>
-            <TextArea id="address">
-                <ImageView id="addressicon"></ImageView>
-            </TextArea>
-            <View class="otherLoginView">
-                <TextField id="city">
-                    <ImageView id="cityicon"></ImageView>
+        <Require type="widget" src="com.csemrm.navigationBar" text="Sign Up" id="navigationBar" />
+        <View id="mapContainner">
+            <ImageView id="logo"></ImageView>
+            <ScrollView id="login_container" >
+                <ImageView id="downarrowicon"></ImageView>
+                <Label id="loginmessage"></Label>
+                <TextField id="name">
+                    <ImageView id="nameicon"></ImageView>
                 </TextField>
-                <TextField id="state">
-                    <ImageView id="stateicon"></ImageView>
+                <TextField id="phone">
+                    <ImageView id="phoneicon"></ImageView>
                 </TextField>
-            </View>
-            <View class="otherLoginView" id="subsbox" ></View>
-            <View class="otherLoginView">
-                <ImageView id="next" onClick="goNext"></ImageView>
-            </View>
+                <TextField id="emailaddress">
+                    <ImageView id="emailicon"></ImageView>
+                </TextField>
+                <TextField id="password">
+                    <ImageView class="passicon"></ImageView>
+                </TextField>
+                <TextField id="cpassword">
+                    <ImageView class="passicon"></ImageView>
+                </TextField>
+                <View class="otherLoginView">
+                    <Label id="dob" onClick="openPicker">
+                        <ImageView id="calicon"></ImageView>
+                    </Label>
+                    <View id="gender"></View>
+                </View>
+                <TextArea id="address">
+                    <ImageView id="addressicon"></ImageView>
+                </TextArea>
+                <View class="otherLoginView">
+                    <TextField id="city">
+                        <ImageView id="cityicon"></ImageView>
+                    </TextField>
+                    <TextField id="state">
+                        <ImageView id="stateicon"></ImageView>
+                    </TextField>
+                </View>
+                <View class="otherLoginView" id="subsbox" ></View>
+                <View class="otherLoginView">
+                    <ImageView id="next" onClick="goNext"></ImageView>
+                </View>
 
-        </ScrollView>
-        <Require src="auth/bottomView"></Require>
+            </ScrollView>
+            <Require src="auth/bottomView"></Require>
+        </View>
     </Window>
 </Alloy>

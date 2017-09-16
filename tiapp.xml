@@ -13,6 +13,8 @@
     <analytics>true</analytics>
     <guid>2b2e5fd2-0bdd-4614-9111-228e73d4334a</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
+    <property name="android.javac.maxmemory" type="string">1024M</property>
+    <property name="android.dx.maxmemory" type="string">2048M</property>
     <property name="run-on-main-thread" type="bool">true</property>
     <ios>
         <enable-launch-screen-storyboard>false</enable-launch-screen-storyboard>
@@ -70,7 +72,7 @@
     <android xmlns:android="http://schemas.android.com/apk/res/android">
         <manifest android:versionCode="1" android:versionName="1.0"
             package="com.softvalleysolutions.woodlesapp" xmlns:android="http://schemas.android.com/apk/res/android">
-            <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="23"/>
+            <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="25"/>
             <application android:debuggable="false"
                 android:hardwareAccelerated="false"
                 android:icon="@drawable/appicon"
@@ -134,9 +136,7 @@
         <theme>default</theme>
     </mobileweb>
     <modules>
-        <module platform="iphone">ti.googlesignin</module>
         <module platform="android">facebook</module>
-        <module platform="android">ti.googlesignin</module>
         <module platform="iphone">facebook</module>
         <module platform="iphone">ti.imagefactory</module>
         <module platform="android">ti.imagefactory</module>
@@ -148,7 +148,7 @@
         <target device="iphone">true</target>
         <target device="mobileweb">false</target>
     </deployment-targets>
-    <sdk-version>6.1.2.GA</sdk-version>
+    <sdk-version>6.2.0.GA</sdk-version>
     <plugins>
         <plugin version="1.0">ti.alloy</plugin>
     </plugins>

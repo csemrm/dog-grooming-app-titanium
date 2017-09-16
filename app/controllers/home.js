@@ -9,25 +9,29 @@
 var args = $.args;
 var restapi = require('/restapi');
 var assets = require('/assets');
+//var push = require('/push');
 var user = Ti.App.Properties.getObject('user', {});
-//inti();
+var config = Ti.App.Properties.getObject('config', {});
+//push.subscribe();
+inti();
 
 function inti() {
     $.navigationBar.setBackgroundColor(Alloy.CFG.apptheme.top_nev_bar_bg);
-
+    /// $.navigationBar.setTitle(Alloy.CFG.apptheme.top_nev_bar_bg);
+    /*
     $.navigationBar.showLeft({
-        image : '/icons/appointment_reminders.png',
-        callback : function(_event) {
+    image : '/icons/appointment_reminders.png',
+    callback : function(_event) {
 
-        }
+    }
     });
 
     $.navigationBar.showMyRight({
-        icon : '/icons/businessman.png',
-        _callback : function(_event) {
-            //Alloy.createController('foodtruck/mapsearch').getView().open();
-        }
-    });
+    icon : '/icons/map_marker.png',
+    _callback : function(_event) {
+    Ti.Platform.openURL('https://www.google.com.bd/maps/search/' + config.contact_address);
+    }
+    });*/
 
 }
 

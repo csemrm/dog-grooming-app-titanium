@@ -13,7 +13,7 @@ $.logo.image = Alloy.CFG.assets + logoImg;
 $.logo.addEventListener('load', function(e) {
     Ti.API.info('$.logo.image' + $.logo.image);
 });
-
+inti();
 var subscribebtn = radio.createCheckBoxButtonGroup({
     groupId : 1,
     width : 240,
@@ -128,4 +128,13 @@ function openPicker() {
         assets.androidPicker('date', $.dob, value);
     }
 
+}
+
+function inti() {
+    $.navigationBar.setBackgroundColor(Alloy.CFG.apptheme.top_nev_bar_bg);
+
+    $.navigationBar.showBack(function(_event) {
+        Ti.API.info('_event ' + JSON.stringify(_event));
+        $.signup.close();
+    });
 }

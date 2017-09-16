@@ -1,4 +1,21 @@
 
-".container" : {
-  
+".container":{
+    width: Ti.UI.FILL,
+    height: Ti.UI.FILL
+}
+"#mapContainner":{
+    top: 66,
+    bottom: 0,
+    width: Ti.UI.FILL,
+    height: Ti.UI.FILL,
+    layout: 'vertical',
+    backgroundColor: Alloy.CFG.apptheme.color_white
+}
+"#mapContainner[platform=android]":{
+    top: 46,
+    bottom: 0,
+    width: Ti.UI.FILL,
+    height: Ti.UI.FILL,
+    layout: 'vertical',
+    backgroundColor: Alloy.CFG.apptheme.color_white
 }

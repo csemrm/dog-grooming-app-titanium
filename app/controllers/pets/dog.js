@@ -8,6 +8,7 @@
 //
 
 var args = $.args;
+var assets = require('/assets');
 var dogId = args.dogId || '';
 var dog = args.dog || {};
 Ti.API.info('dog' + JSON.stringify(dog));
@@ -27,11 +28,25 @@ function loaddog(dog) {
             j = dogimages.length; i < j; i++) {
             images.push(Alloy.CFG.assets + dogimages[i].path);
         };
-        $.imgdog.images = images;
-        $.imgdog.start();
-    } else if (dog.type === 'Dog') {
-        $.imgdog.image = '/images/avators-dog.png';
-    } else if (dog.type === 'Cat') {
-        $.imgdog.image = '/images/avators-cat.png';
+        $.imgdog.add(assets.Utils.RemoteImage({
+            image : encodeURI(images[0]),
+            width : Ti.UI.FILL,
+            height : Ti.UI.FILL,
+            top : 0,
+            touchEnabled : false
+        }));
+    } else {
+        if (dog.type === 'Dog') {
+            var _image = '/images/avators-dog.png';
+        } else if (dog.type === 'Cat') {
+            var _image = '/images/avators-cat.png';
+        }
+        $.imgdog.add(assets.Utils.RemoteImage({
+            image : encodeURI(_image),
+            width : Ti.UI.FILL,
+            height : Ti.UI.FILL,
+            top : 0,
+            touchEnabled : false
+        }));
     }
 }

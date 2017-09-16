@@ -16,5 +16,5 @@ Ti.API.info('dog' + JSON.stringify(dog));
 
 $.petdetail.add(Alloy.createController('appointment/add', {
     win : $.petdetail,
-    args : args
+    dog : dog
 }).getView());

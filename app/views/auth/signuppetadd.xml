@@ -1,4 +1,6 @@
 <Alloy>
-	<Window class="container"> 
-	</Window>
+    <Window class="container">
+        <Require type="widget" src="com.csemrm.navigationBar" text="Pet's Information" id="navigationBar" />
+        <View id="mapContainner"></View>
+    </Window>
 </Alloy>

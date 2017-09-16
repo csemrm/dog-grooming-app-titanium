@@ -8,13 +8,17 @@ var ref = args.ref || 'signup';
 var win = args.win || '';
 var dog = args.dog || {};
 var dogId = '';
-Ti.API.info('dog ' + JSON.stringify(args));
-indicator_win = new indicator();
+//Ti.API.info('dog ' + JSON.stringify(args));
+
+var indicator_win = new indicator();
 var config = Ti.App.Properties.getObject('config', {});
 var logoImg = config.images[0].path;
 $.logo.image = Alloy.CFG.assets + logoImg;
 var user = Ti.App.Properties.getObject('user', {});
 var appuser_id = user.id;
+var images = [];
+var animaltype_opts_selectedValue = [false];
+var gender_opts_selectedValue = [false];
 
 loadDog(dog);
 
@@ -55,7 +59,7 @@ var animaltype_opts = radio.createRadioButtonGroup({
 $.animaltypebox.add(animaltype_opts);
 
 animaltype_opts.addEventListener('click', function(e) {
-    Ti.API.info('animaltype_opts ' + animaltype_opts.selectedValue[0]);
+    Ti.API.info('animaltype_opts ' + JSON.stringify(animaltype_opts));
     var type = animaltype_opts.selectedValue[0] || '';
     if (type === 'Dog') {
         $.dogpic.image = '/images/avators-dog.png';

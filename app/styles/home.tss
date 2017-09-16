@@ -3,8 +3,8 @@
     height: Ti.UI.FILL
 }
 "#mapContainner":{
-    top: 20,
-    bottom: 60,
+    top: 46,
+    bottom: 50,
     width: Ti.UI.FILL,
     height: Ti.UI.FILL,
     layout: 'vertical',
@@ -12,7 +12,7 @@
 }
 "#mapContainner[platform=android]":{
     top: 46,
-    bottom: 60,
+    bottom: 50,
     width: Ti.UI.FILL,
     height: Ti.UI.FILL,
     layout: 'vertical',

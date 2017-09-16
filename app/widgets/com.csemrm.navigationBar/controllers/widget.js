@@ -38,8 +38,8 @@ if (CONFIG.image) {
     Ti.API.info('theme' + theme);
     $.title = Ti.UI.createLabel({
         top : (OS_IOS && deviceVersion >= 7) ? "20dp" : "0dp",
-        left : "9dp",
-        right : "80dp",
+        //left : "9dp",
+        //right : "80dp",
         height : "46dp",
         font : {
             fontSize : "18dp",

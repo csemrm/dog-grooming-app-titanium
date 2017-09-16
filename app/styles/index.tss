@@ -1,6 +1,5 @@
 ".container": {
-    backgroundImage: '/images/background.png',
-    backgroundColor: Alloy.CFG.apptheme.MainColor
+    backgroundColor: 'transparent'
 }
 
 "Label": {

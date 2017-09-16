@@ -1,0 +1,8 @@
+<Alloy>
+    <Window class="container">
+        <View  id="dogdisply">
+            <ImageView id="imgdog"></ImageView>
+        </View>
+        <ImageView id="appointments"onClick="setAppointments"></ImageView>
+    </Window>
+</Alloy>

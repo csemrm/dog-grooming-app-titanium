@@ -19,10 +19,5 @@ for (var i = 0,
 $.imgdog.images = images;
 $.imgdog.start();
 function setAppointments() {
-    Ti.App.fireEvent('reload:lsit', {
-        source : {
-            id : 1,
-            promo_id : promo.id
-        }
-    });
+
 }

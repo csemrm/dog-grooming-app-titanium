@@ -49,13 +49,13 @@ loaddogs(user);
 function opnePetDetail(e) {
     if (e.source.id === 'dogdisply') {
         var dog = e.source.dog;
-        var petdetailWin = Alloy.createController('pets/petdetail', {
-            dog : dog,
-            isFev : false,
-            isEditable : false
-        }).getView();
-
-        petdetailWin.open();
+        Ti.App.fireEvent('reload:lsit', {
+            source : {
+                id : 1,
+                dog : e.source.dog,
+                dogId : dog.id
+            }
+        });
     }
 }
 

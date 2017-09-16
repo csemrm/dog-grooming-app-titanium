@@ -1,5 +1,5 @@
 <Alloy>
-	<Window class="container">
+	<Window class="container" exitOnClose="true">
 		<ImageView id="errorlogo">
 		</ImageView>
 		<Label id="errormessage">

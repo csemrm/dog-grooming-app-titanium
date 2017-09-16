@@ -37,18 +37,18 @@
     touchEnabled: false
 }
 "#dogcontainner":{
-    backgroundColor:Alloy.CFG.apptheme.top_nev_bar_bg,
+    backgroundColor:Alloy.CFG.apptheme.input_text_color,
     bottom: 10,
-    width: Ti.UI.FILL,
     contentHeight: 120,
-    contentWidth: Ti.UI.SIZE,
     height: 120,
-    disableBounce: true,
-    layout: 'horizontal'
+    //disableBounce: true,
+    layout: 'horizontal',
+    scrollType: 'horizontal'
 }
 "#schedule":{
     bottom: 140,
-    height: 25,
+    height: 35,
+    width: Titanium.UI.FILL,
     text: "Schedule \n for",
     color: Alloy.CFG.apptheme.input_text_color,
     font:{

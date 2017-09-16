@@ -4,12 +4,23 @@
     width: Ti.UI.FILL,
     height: Ti.UI.FILL
 }
-
+"#mapContainner":{
+    top: 66,
+    bottom: 0,
+    width: Ti.UI.FILL,
+    height: Ti.UI.FILL
+}
+"#mapContainner[platform=android]":{
+    top: 46,
+    bottom: 0,
+    width: Ti.UI.FILL,
+    height: Ti.UI.FILL
+}
 "#logo":{
     image: '/others/logo.png',
     width: 80,
     height:Ti.UI.SIZE,
-    top: 50
+    top: 10
 }
 "#login_container":{
     layout: 'vertical',
@@ -17,8 +28,9 @@
     borderRadius: 10,
     backgroundColor: Alloy.CFG.apptheme.color_white,
     bottom: 90,
-    top: 140,
-    disableBounce: true
+    top: 100,
+    disableBounce: true,
+    scrollType: 'vertical'
 }
 
 "#downarrowicon":{

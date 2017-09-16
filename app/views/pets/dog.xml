@@ -1,8 +1,6 @@
 <Alloy>
-	<View class="container" id="dogdisply">
-		<Label id="petname">
-		</Label>
-		<ImageView id="imgdog">
-		</ImageView>
-	</View>
+    <View class="container" id="dogdisply">
+        <Label id="petname"></Label>
+        <View id="imgdog"></View>
+    </View>
 </Alloy>

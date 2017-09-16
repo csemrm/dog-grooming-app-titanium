@@ -12,30 +12,33 @@
     disableBounce: true
 }
 "#edit":{
+    backgroundColor:Alloy.CFG.apptheme.top_nev_bar_bg ,
     right: 28,
     top: 8,
-    image: '/icons/share.png',
+    image: '/icons/edit.png',
     borderRadius: 10,
     width: 20,
     height: 20,
     zIndex: 100
 }
 "#share":{
+    backgroundColor:Alloy.CFG.apptheme.top_nev_bar_bg ,
     right: 28,
-    bottom: 8,
+    bottom: 28,
     image: '/icons/share.png',
-    borderRadius: 15,
-    width: 30,
-    height: 30,
+    borderRadius: 18,
+    width: 36,
+    height: 36,
     zIndex: 100
 }
 
 "#imgdog":{
-    backgroundColor: Alloy.CFG.apptheme.top_nev_bar_bg,
+    backgroundColor: Alloy.CFG.apptheme.input_text_color,
     width: Ti.UI.FILL,
     right: 20,
     height: Titanium.UI.SIZE,
-    left: 20
+    left: 20,
+    bottom: 20
 }
 "#dogname":{
     top: 20,
