@@ -19,9 +19,8 @@ exports.subscribe = function() {
             "DeviceTypeId" : OS_IOS ? "IOS" : "Android",
             "DeviceToken" : token
         }, function(results) {
-            var response = JSON.parse(results);
-            Ti.API.info("RESPONSE: " + response);
-            Ti.App.Properties.setString('UserDeviceId', response.UserDeviceId);
+            Ti.API.info("RESPONSE: " + results.user);
+            Ti.App.Properties.setString('UserDeviceId', results.user.id);
         }, function(results) {
         });
     }
@@ -66,6 +65,20 @@ exports.subscribe = function() {
             callback : function(event) {
                 Ti.API.info("Push callback = " + JSON.stringify(event));
                 /* Called when a notification is received and the app is in the foreground */
+
+                var dialog = Ti.UI.createAlertDialog({
+                    title : 'Push received',
+                    message : JSON.stringify(event.data),
+                    buttonNames : ['View', 'Cancel'],
+                    cancel : 1
+                });
+                dialog.addEventListener("click", function(event) {
+                    dialog.hide();
+                    if (event.index == 0) {
+                        /* Do stuff to view the notification */
+                    }
+                });
+                dialog.show();
             }
         });
 

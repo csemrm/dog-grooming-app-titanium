@@ -169,16 +169,13 @@ exports.reservations = function(data, callback) {
 
 exports.userDevice = function(data, onSucess, onError) {
 
-    //indicator_win.open();
     var xhr = Ti.Network.createHTTPClient({
         onload : function() {
-            //indicator_win.close();
             Ti.API.info('this.responseText ' + this.responseText);
             json = JSON.parse(this.responseText);
             onSucess(json);
         },
         onerror : function(e) {
-            //indicator_win.close();
             Ti.API.info('this.responseText onerror' + this.responseText);
             onError();
         },
@@ -186,7 +183,7 @@ exports.userDevice = function(data, onSucess, onError) {
     });
 
     Ti.API.info('data ' + JSON.stringify(data));
-    var url = restURL + 'user_device/add';
+    var url = restURL + 'devices/add';
     Ti.API.info('url ' + url);
     xhr.open('POST', encodeURI(url));
     xhr.send(data);
