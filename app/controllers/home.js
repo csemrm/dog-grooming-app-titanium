@@ -9,10 +9,10 @@
 var args = $.args;
 var restapi = require('/restapi');
 var assets = require('/assets');
-//var push = require('/push');
+var push = require('/push');
 var user = Ti.App.Properties.getObject('user', {});
 var config = Ti.App.Properties.getObject('config', {});
-//push.subscribe();
+push.subscribe();
 inti();
 
 function inti() {

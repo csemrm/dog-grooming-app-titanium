@@ -30,9 +30,9 @@
             "add_truck_label_color": "#b0bec5",
             "top_nev_bar_bg": "#F7765A"
         },
-        "siteURL": "http://groomingapp.softvalleysolutions.com/index.php/",
-        "restURL": "http://groomingapp.softvalleysolutions.com/index.php/rest/",
-        "assets": "http://groomingapp.softvalleysolutions.com/uploads/",
+        "siteURL": "http://woodlesapp.pluggedinsandbox.com/index.php/",
+        "restURL": "http://woodlesapp.pluggedinsandbox.com/index.php/rest/",
+        "assets": "http://woodlesapp.pluggedinsandbox.com/uploads/",
         "consumerSecret": "72zehpGrXV1BosVm1mbSUECbF8uXv7MjScpgmqaBuDFMtAmwwN",
         "consumerKey": "j29CJPIqdBlxNRtDJBvadGuNo"
     },

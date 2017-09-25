@@ -38,29 +38,6 @@ var registerOptions = {
     APNTypes : [PushClient.NOTIFICATION_TYPE_BADGE, PushClient.NOTIFICATION_TYPE_ALERT, PushClient.NOTIFICATION_TYPE_SOUND]
 };
 
-if (OS_IOS) {
-    var acceptAction = PushClient.createAction({
-        identifier : 'ACCEPT_IDENTIFIER',
-        title : 'Accept',
-        activationMode : PushClient.NOTIFICATION_ACTIVATION_MODE_FOREGROUND,
-        destructive : false,
-        authenticationRequired : true
-    });
-    var rejectAction = PushClient.createAction({
-        identifier : 'REJECT_IDENTIFIER',
-        title : 'Reject',
-        activationMode : PushClient.NOTIFICATION_ACTIVATION_MODE_BACKGROUND,
-        destructive : true,
-        authenticationRequired : false
-    });
-    var downloadContent = PushClient.createCategory({
-        identifier : 'APPROVE_CONTENT',
-        actionsForMinimalContext : [acceptAction, rejectAction],
-        actionsForDefaultContext : [acceptAction, rejectAction]
-    });
-    //registerOptions.Categories = [downloadContent];
-}
-
 // Valid APNTypes (for iOS):
 // PushClient.NOTIFICATION_TYPE_BADGE
 // PushClient.NOTIFICATION_TYPE_ALERT
@@ -229,10 +206,9 @@ PushClient.addEventListener(PushClient.EVENT_SUCCESS, eventSuccess);
 PushClient.addEventListener(PushClient.EVENT_ERROR, eventError);
 PushClient.addEventListener(PushClient.EVENT_CALLBACK, eventCallback);
 
-exports.registerPush = function() {
-    Ti.API.info('registerPush...');
-    PushClient.registerPush(registerOptions);
-};
+Ti.API.info('registerPush...');
+PushClient.registerPush(registerOptions);
+
 exports.unregisterPush = function() {
     PushClient.unregisterPush();
     // Call this method to unregister
