@@ -6,8 +6,6 @@ exports.subscribe = function() {
     var _iPhone = "iphone";
     var _android = "android";
     var _platform = Ti.Platform.osname;
-    //var ui = require("ui");
-    //var indicator = ui.getActivityIndicator();
 
     //*********************  PUSH NOTIFICATIONS **************************/
 
@@ -19,10 +17,33 @@ exports.subscribe = function() {
             "DeviceTypeId" : OS_IOS ? "IOS" : "Android",
             "DeviceToken" : token
         }, function(results) {
-            Ti.API.info("RESPONSE: " + results.user);
-            Ti.App.Properties.setString('UserDeviceId', results.user.id);
+            if (results.error === false) {
+                Ti.API.info("RESPONSE: " + results.user);
+                Ti.App.Properties.setString('UserDeviceId', results.user.id);
+            }
         }, function(results) {
         });
+    }
+
+    function errorCallbackPush(e) {
+        Ti.App.Properties.setString("deviceToken", "");
+    }
+
+    function messageCallbackPush(event) {
+        //alert(thePush);
+        var dialog = Ti.UI.createAlertDialog({
+            title : 'Push received',
+            message : JSON.stringify(event.data),
+            buttonNames : ['View', 'Cancel'],
+            cancel : 1
+        });
+        dialog.addEventListener("click", function(event) {
+            dialog.hide();
+            if (event.index == 0) {
+                /* Do stuff to view the notification */
+            }
+        });
+        dialog.show();
     }
 
     if (_platform == _android) {
@@ -58,28 +79,8 @@ exports.subscribe = function() {
                 /* Add code to send event.registrationId to your server */
                 subscribeToken(event.registrationId);
             },
-            error : function(event) {
-                Ti.API.info("Push registration error: " + JSON.stringify(event));
-                alert(event.error);
-            },
-            callback : function(event) {
-                Ti.API.info("Push callback = " + JSON.stringify(event));
-                /* Called when a notification is received and the app is in the foreground */
-
-                var dialog = Ti.UI.createAlertDialog({
-                    title : 'Push received',
-                    message : JSON.stringify(event.data),
-                    buttonNames : ['View', 'Cancel'],
-                    cancel : 1
-                });
-                dialog.addEventListener("click", function(event) {
-                    dialog.hide();
-                    if (event.index == 0) {
-                        /* Do stuff to view the notification */
-                    }
-                });
-                dialog.show();
-            }
+            error : errorCallbackPush,
+            callback : messageCallbackPush
         });
 
     } else if (_platform == _iPhone) {
@@ -89,15 +90,6 @@ exports.subscribe = function() {
             if (!Titanium.App.Properties.getBool('tokenSubscribed', false)) {
                 subscribeToken(e.deviceToken);
             }
-        }
-
-        function errorCallbackPush(e) {
-            Ti.App.Properties.setString("deviceToken", "");
-        }
-
-        function messageCallbackPush(thePush) {
-            alert(thePush);
-            //or alert(thePush.data);
         }
 
         function registerForPush() {
