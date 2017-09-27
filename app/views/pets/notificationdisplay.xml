@@ -1,8 +1,15 @@
 <Alloy>
-    <Window class="container">
-        <View  id="dogdisply">
-            <ImageView id="imgdog"></ImageView>
-        </View>
-        <ImageView id="appointments"onClick="setAppointments"></ImageView>
-    </Window>
+	<Window class="container" id="notificationdisplay">
+		<View id="dogcontainner">
+			<View  id="dogdisply">
+				<ImageView id="imgdog">
+				</ImageView>
+			</View>
+			<Label id="promodesc">
+				You have new promo for your pets
+			</Label>
+			<ImageView id="appointments"onClick="gotoScreen">
+			</ImageView>
+		</View>
+	</Window>
 </Alloy>

@@ -9,15 +9,49 @@ var args = $.args;
 var restapi = require('/restapi');
 var assets = require('/assets');
 var user = Ti.App.Properties.getObject('user', {});
-var promo = args.promo || {};
-Ti.API.info('promo' + JSON.stringify(promo));
-var images = [];
-for (var i = 0,
-    j = promo.images.length; i < j; i++) {
-    images.push(Alloy.CFG.assets + promo.images[i].path);
-};
-$.imgdog.images = images;
-$.imgdog.start();
-function setAppointments() {
 
+var data = args.data || {};
+var extradata = data.extradata || {};
+var type = extradata.type || '';
+if (type === 'promo') {
+    var promo = extradata.feed;
+
+    var images = [];
+    for (var i = 0,
+        j = promo.images.length; i < j; i++) {
+        images.push(Alloy.CFG.assets + promo.images[i].path);
+    };
+    $.imgdog.images = images;
+    $.imgdog.start();
+
+    $.promodesc.text = extradata.feed.description || '';
+} else if (type === 'dog') {
+    var reservation = extradata.reservation;
+
+    var images = [];
+    for (var i = 0,
+        j = reservation.images.length; i < j; i++) {
+        images.push(Alloy.CFG.assets + reservation.images[i].path);
+    };
+    $.imgdog.images = images;
+    $.imgdog.start();
+    $.promodesc.text = data.payload || '';
+}
+function gotoScreen() {
+    $.notificationdisplay.close();
+    if (type === 'promo') {
+        Ti.App.fireEvent('reload:lsit', {
+            source : {
+                id : 3,
+                ref : 'specials',
+            }
+        });
+    } else if (type === 'dog') {
+        Ti.App.fireEvent('reload:lsit', {
+            source : {
+                id : 3,
+                ref : 'specials',
+            }
+        });
+    }
 }

@@ -31,30 +31,23 @@ exports.subscribe = function() {
 
     function messageCallbackPush(event) {
         //alert(thePush);
-        var dialog = Ti.UI.createAlertDialog({
-            title : 'Push received',
-            message : JSON.stringify(event.data),
-            buttonNames : ['View', 'Cancel'],
-            cancel : 1
-        });
-        dialog.addEventListener("click", function(event) {
-            dialog.hide();
-            if (event.index == 0) {
-                /* Do stuff to view the notification */
-            }
-        });
-        dialog.show();
+        Ti.App.fireEvent('app:messagePush', event);
     }
 
     if (_platform == _android) {
         var gcm = require('nl.vanvianen.android.gcm');
+        Ti.App.addEventListener('app:homeopen', function() {
 
-        var lastData = gcm.getLastData();
-        if (lastData) {
+            var lastData = gcm.getLastData();
             Ti.API.info("Last notification received " + JSON.stringify(lastData));
-            gcm.clearLastData();
-        }
+            if (lastData || null) {
 
+                messageCallbackPush({
+                    data : lastData
+                });
+                gcm.clearLastData();
+            }
+        });
         gcm.registerPush({
             senderId : '165354934161',
             notificationSettings : {
@@ -66,11 +59,6 @@ exports.subscribe = function() {
                 localOnly : false, /* Whether this notification should be bridged to other devices */
                 priority : +2, /* Notification priority, from -2 to +2 */
                 bigText : false,
-                /* You can also set a static value for title, message, or ticker. If you set a value here, the key will be ignored. */
-                // title: '',
-                // message: '',
-                // ticker: ''
-                /* Add LED flashing */
                 ledOn : 200,
                 ledOff : 300
             },

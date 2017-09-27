@@ -1,6 +1,7 @@
 "#main":{
     width: Ti.UI.FILL,
-    height: Ti.UI.FILL
+    height: Ti.UI.FILL,
+    exitOnClose: true
 }
 "#mapContainner":{
     top: 46,

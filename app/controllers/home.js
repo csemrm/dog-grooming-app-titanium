@@ -62,7 +62,7 @@ var tabs = [{
     icon : "/icons/advertising.png",
     activeicon : "/icons/advertising-o.png",
     controller : 'promotions/list',
-    ref : 'pets_home',
+    ref : 'specials',
 }];
 
 // Initialize the tab bar
@@ -105,3 +105,16 @@ setTimeout(function() {
 $.main.addEventListener('click', function(e) {
     Ti.API.info('ee' + JSON.stringify(e));
 });
+
+$.main.addEventListener('open', function(e) {
+    Ti.App.fireEvent('app:homeopen', e);
+    Ti.API.info('messagePush ' + JSON.stringify(e));
+
+});
+Ti.App.addEventListener('app:messagePush', messagePush);
+function messagePush(event) {
+    Ti.API.info('messagePush ' + JSON.stringify(event));
+    var popcontroller = Alloy.createController('pets/notificationdisplay', event).getView();
+    popcontroller.open();
+
+}
