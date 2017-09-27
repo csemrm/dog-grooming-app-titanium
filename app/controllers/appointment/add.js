@@ -27,11 +27,11 @@ Ti.API.info('dog' + JSON.stringify(dog));
 var images = [];
 var itemIndex = 0;
 var win;
-var services = config.services || ['Dog Walk', 'Wash', 'Hair Cut', 'Bail Trimming', 'Flea Treatment', 'Over night vacation'];
+var services = config.services ;//|| ['Dog Walk', 'Wash', 'Hair Cut', 'Bail Trimming', 'Flea Treatment', 'Over night vacation'];
 if (dogId)
     loaddog(dog);
 
-$.dogcontainner.top = Alloy.Globals.height > 600 ? (Alloy.Globals.height - 600) : 10;
+$.dogcontainner.top = Alloy.Globals.height > 650 ? (Alloy.Globals.height - 650) : 10;
 
 var gender_opts = radio.createCheckBoxButtonGroup({
     groupId : 1,

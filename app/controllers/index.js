@@ -6,6 +6,7 @@ function onLoad(e) {
     indicator_win.open();
 
     restapi.getConfig(function(data) {
+        data.services = (data.services).split(",");
         Ti.App.Properties.setObject('config', data);
         Ti.API.info('get config' + JSON.stringify(data));
         indicator_win.close();
