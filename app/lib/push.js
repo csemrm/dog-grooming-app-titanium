@@ -38,9 +38,9 @@ exports.subscribe = function() {
         var gcm = require('nl.vanvianen.android.gcm');
         Ti.App.addEventListener('app:homeopen', function() {
 
-            var lastData = gcm.getLastData();
+            var lastData = gcm.getLastData() || null;
             Ti.API.info("Last notification received " + JSON.stringify(lastData));
-            if (lastData || null) {
+            if (lastData) {
 
                 messageCallbackPush({
                     data : lastData

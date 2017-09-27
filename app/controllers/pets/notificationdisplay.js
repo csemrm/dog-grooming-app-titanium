@@ -23,7 +23,7 @@ if (type === 'promo') {
     };
     $.imgdog.images = images;
     $.imgdog.start();
-
+    Ti.API.info('images ' + JSON.stringify(images));
     $.promodesc.text = extradata.feed.description || '';
 } else if (type === 'dog') {
     var reservation = extradata.reservation;
@@ -35,6 +35,7 @@ if (type === 'promo') {
     };
     $.imgdog.images = images;
     $.imgdog.start();
+    Ti.API.info('images ' + JSON.stringify(images));
     $.promodesc.text = data.payload || '';
 }
 function gotoScreen() {
@@ -49,8 +50,8 @@ function gotoScreen() {
     } else if (type === 'dog') {
         Ti.App.fireEvent('reload:lsit', {
             source : {
-                id : 3,
-                ref : 'specials',
+                id : 0,
+                ref : 'home',
             }
         });
     }
