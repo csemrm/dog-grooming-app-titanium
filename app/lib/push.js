@@ -39,7 +39,6 @@ exports.subscribe = function() {
         Ti.App.addEventListener('app:homeopen', function() {
 
             var lastData = gcm.getLastData() || null;
-            Ti.API.info("Last notification received " + JSON.stringify(lastData));
             if (lastData) {
 
                 messageCallbackPush({
@@ -59,8 +58,8 @@ exports.subscribe = function() {
                 localOnly : false, /* Whether this notification should be bridged to other devices */
                 priority : +2, /* Notification priority, from -2 to +2 */
                 bigText : false,
-                ledOn : 200,
-                ledOff : 300
+                ledOn : parseInt(200),
+                ledOff : parseInt(300)
             },
             success : function(event) {
                 Ti.API.info("Push registration success: " + JSON.stringify(event));

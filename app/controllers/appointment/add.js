@@ -26,9 +26,12 @@ var direction = '';
 Ti.API.info('dog' + JSON.stringify(dog));
 var images = [];
 var itemIndex = 0;
-var win ;
+var win;
+var services = config.services || ['Dog Walk', 'Wash', 'Hair Cut', 'Bail Trimming', 'Flea Treatment', 'Over night vacation'];
 if (dogId)
     loaddog(dog);
+
+$.dogcontainner.top = Alloy.Globals.height > 600 ? (Alloy.Globals.height - 600) : 10;
 
 var gender_opts = radio.createCheckBoxButtonGroup({
     groupId : 1,
@@ -37,7 +40,7 @@ var gender_opts = radio.createCheckBoxButtonGroup({
     left : 2,
     top : 15,
     layout : 'vertical',
-    radioItemsValue : ['Dog Walk', 'Wash', 'Hair Cut', 'Bail Trimming', 'Flea Treatment', 'Over night vacation'],
+    radioItemsValue : services,
     radioItemsPadding : 5,
     radioItemsBackgroundSelectedImage : '/images/checkbox_tick.png',
     radioItemsBackgroundImage : '/images/checkbox.png',
@@ -170,7 +173,7 @@ function changeDog(e) {
 
 function direction_left(images) {
     var t1 = Ti.UI.create2DMatrix();
-    t1 = t1.translate(-300, 0);
+    t1 = t1.translate(-600, 0);
     var a1 = Ti.UI.createAnimation();
     a1.transform = t1;
     a1.duration = 400;
@@ -190,7 +193,7 @@ function direction_left(images) {
 
 function direction_right(images) {
     var t1 = Ti.UI.create2DMatrix();
-    t1 = t1.translate(300, 0);
+    t1 = t1.translate(600, 0);
     var a1 = Ti.UI.createAnimation();
     a1.transform = t1;
     a1.duration = 400;

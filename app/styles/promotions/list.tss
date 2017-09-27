@@ -5,5 +5,5 @@
     contentWidth: 300,
     height: Ti.UI.FILL,
     layout: 'vertical',
-    backgroundColor: Alloy.CFG.apptheme.MainColor
+    backgroundColor: Alloy.CFG.apptheme.color_white
 }

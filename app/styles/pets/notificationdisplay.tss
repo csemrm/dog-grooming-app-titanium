@@ -41,7 +41,7 @@
 "#appointments":{
     top: 10,
     image: "/buttons/SAA.png",
-    width: 220,
-    height:Ti.UI.SIZE,
+    width: 180,
+    height:40,
     bottom: 20
 }

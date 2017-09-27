@@ -5,6 +5,14 @@ var restapi = require('/restapi');
 var assets = require('/assets');
 var logoImg = config.images[0].path;
 var fb = Alloy.Globals.Facebook;
+var measurement = require('alloy/measurement');
+//Alloy.Globals.width
+//Alloy.Globals.height
+
+if (Alloy.Globals.height > 600) {
+    $.logo.top = 100;
+    $.logo.width = 160;
+}
 Ti.API.info('Alloy.CFG.assets.logoImg' + Alloy.CFG.assets + logoImg + 'config ' + JSON.stringify(config.images[0]));
 $.logo.image = Alloy.CFG.assets + logoImg;
 
@@ -12,6 +20,13 @@ fb.permissions = ["public_profile", "email", "user_friends"];
 // e.g. ['email']
 fb.initialize();
 fb.logout();
+var userlogin = Ti.App.Properties.getObject('userlogin', {
+    email : '',
+    password : ''
+});
+
+$.emailaddress.value = userlogin.email;
+$.password.value = userlogin.password;
 
 $.logo.addEventListener('load', function(e) {
     Ti.API.info('$.logo.image' + $.logo.image);
@@ -56,6 +71,7 @@ function onSubmit() {
                 };
                 assets.alertMsg(param);
             } else {
+                Ti.App.Properties.setObject('userlogin', _data);
                 Ti.App.Properties.setObject('user', data);
                 Ti.API.info('get user' + JSON.stringify(data));
 

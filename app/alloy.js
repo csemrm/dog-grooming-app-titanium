@@ -16,4 +16,14 @@ Alloy.Globals.Facebook = require('facebook');
 Alloy.Globals.Facebook.permissions = ["public_profile", "email", "user_friends"];
 // e.g. ['email']
 Alloy.Globals.Facebook.initialize();
-Alloy.Globals.Facebook.logout(); 
+Alloy.Globals.Facebook.logout();
+
+var width = Ti.Platform.displayCaps.platformWidth,
+    height = Ti.Platform.displayCaps.platformHeight;
+if (Ti.Platform.osname === 'android') {
+    width = Ti.Platform.displayCaps.platformWidth / Ti.Platform.displayCaps.logicalDensityFactor;
+    height = Ti.Platform.displayCaps.platformHeight / Ti.Platform.displayCaps.logicalDensityFactor;
+}
+Alloy.Globals.width = width;
+Alloy.Globals.height = height;
+Ti.API.info(' width ' + width + '  height ' + height);

@@ -1,18 +1,21 @@
-//
-//  details.js
+// 
+//  notificationdisplay.js
 //  WoodlesApp
-//
-//  Created by Mostafizur Rahman on 2017-09-09.
+//  
+//  Created by Mostafizur Rahman on 2017-09-27.
 //  Copyright 2017 Mostafizur Rahman. All rights reserved.
-//
+// 
+
 var args = $.args;
 var restapi = require('/restapi');
 var assets = require('/assets');
 var user = Ti.App.Properties.getObject('user', {});
 
 var data = args.data || {};
-var extradata = data.extradata || {};
+var extradata = JSON.parse(data.extradata) || {};
 var type = extradata.type || '';
+ Ti.API.info('type '+ type +'notificationdisplay data images ' + JSON.stringify(extradata));
+ 
 if (type === 'promo') {
     var promo = extradata.feed;
 

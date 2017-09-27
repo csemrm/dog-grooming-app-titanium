@@ -57,14 +57,15 @@ color: '#000' // all platforms except Android and Windows default to black
     }
 }
 "TextField[platform=android]":{
-   // softKeyboardOnFocus: Titanium.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS
+    // softKeyboardOnFocus: Titanium.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS
 }
 "TextArea[platform=android]":{
     //softKeyboardOnFocus: Titanium.UI.Android.SOFT_KEYBOARD_HIDE_ON_FOCUS
 }
 
 "ImageView":{
-    duration: 1000
+    duration: 1000,
+    defaultImage: '/images/avators-dog.png'
 }
 
 "Label":{

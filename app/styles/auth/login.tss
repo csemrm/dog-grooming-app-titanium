@@ -42,7 +42,7 @@
     top: 10,
     left: 20,
     right: 20,
-    value: 'csemrm@gmail.com',
+    value: '',
     hintText: 'Enter Your Email ID',
     returnKeyType:Titanium.UI.RETURNKEY_NEXT,
     keyboardType: Titanium.UI.KEYBOARD_TYPE_EMAIL
@@ -57,7 +57,7 @@
     top: 10,
     left: 20,
     right: 20,
-    value: '123',
+    value: '',
     hintText: 'Password',
     passwordMask: true,
     returnKeyType:Titanium.UI.RETURNKEY_GO

@@ -17,6 +17,10 @@ Ti.API.info('Alloy.CFG.assets.logoImg' + Alloy.CFG.assets + logoImg + 'config ' 
 
 indicator_win = new indicator();
 
+//if (Alloy.Globals.height > 640) {
+$.promo.top = Alloy.Globals.height > 650 ? (Alloy.Globals.height - 640) : 10;
+//}
+
 function loadpromos() {
     indicator_win.open();
     restapi.loadpromos(function(e) {
@@ -46,7 +50,7 @@ function displayloadpromos(promos) {
         $.promodesc.text = promo.description;
     } else {
         $.imgdog.image = Alloy.CFG.assets + logoImg;
-        $.imgdog.height = 200;
+        //$.imgdog.height = 200;
         $.promodesc.text = config.contact_address;
         $.promodesc.textAlign = Titanium.UI.TEXT_ALIGNMENT_CENTER;
 
