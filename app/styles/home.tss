@@ -4,7 +4,7 @@
     exitOnClose: true
 }
 "#mapContainner":{
-    top: 46,
+    top: 70,
     bottom: 50,
     width: Ti.UI.FILL,
     height: Ti.UI.FILL,

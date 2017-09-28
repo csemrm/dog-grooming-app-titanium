@@ -83,6 +83,14 @@ function onSubmit() {
             $.index.add(noapi);
             indicator_win.close();
         });
+    } else {
+        var param = {
+            buttonNames : ['Ok'],
+            message : "All Feild required",
+            callback : function(e) {
+            }
+        };
+        assets.alertMsg(param);
     }
 }
 

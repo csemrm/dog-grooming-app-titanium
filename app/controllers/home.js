@@ -13,25 +13,26 @@ var push = require('/push');
 var user = Ti.App.Properties.getObject('user', {});
 var config = Ti.App.Properties.getObject('config', {});
 push.subscribe();
+var itemIndex = 0;
 inti();
 
 function inti() {
+    $.navigationBar.setTitle(config.company_name);
     $.navigationBar.setBackgroundColor(Alloy.CFG.apptheme.top_nev_bar_bg);
-    /// $.navigationBar.setTitle(Alloy.CFG.apptheme.top_nev_bar_bg);
     /*
-    $.navigationBar.showLeft({
-    image : '/icons/appointment_reminders.png',
-    callback : function(_event) {
+     $.navigationBar.showLeft({
+     image : '/icons/appointment_reminders.png',
+     callback : function(_event) {
 
-    }
-    });
+     }
+     });
 
-    $.navigationBar.showMyRight({
-    icon : '/icons/map_marker.png',
-    _callback : function(_event) {
-    Ti.Platform.openURL('https://www.google.com.bd/maps/search/' + config.contact_address);
-    }
-    });*/
+     $.navigationBar.showMyRight({
+     icon : '/icons/map_marker.png',
+     _callback : function(_event) {
+     Ti.Platform.openURL('https://www.google.com.bd/maps/search/' + config.contact_address);
+     }
+     });*/
 
 }
 
@@ -82,6 +83,7 @@ $.Tabs.Wrapper.addEventListener("click", handleTabClick);
 function handleTabClick(_event) {
     Ti.API.info('handleTabClick ' + JSON.stringify(_event));
     if ( typeof _event.source.id !== "undefined") {
+        itemIndex = _event.source.id || 0;
         $.Tabs.setIndex(_event.source.id);
         $.mapContainner.removeAllChildren();
         var ref = _event.source.ref || 'home';
@@ -108,7 +110,6 @@ $.main.addEventListener('click', function(e) {
 
 $.main.addEventListener('open', function(e) {
     Ti.App.fireEvent('app:homeopen', e);
-    Ti.API.info('messagePush ' + JSON.stringify(e));
 
 });
 Ti.App.addEventListener('app:messagePush', messagePush);
@@ -117,4 +118,46 @@ function messagePush(event) {
     var popcontroller = Alloy.createController('pets/notificationdisplay', event).getView();
     popcontroller.open();
     Ti.App.removeEventListener('app:messagePush', messagePush);
+}
+
+function changeTab(e) {
+    Ti.API.info(' tabs changeTab tabs ' + JSON.stringify(e));
+    if (e.direction === 'left') {
+        direction = 'left';
+        forwardItem();
+    } else if (e.direction === 'right') {
+        direction = 'right';
+        rewindItem();
+    }
+
+}
+
+function forwardItem(e) {
+
+    itemIndex = itemIndex + 1;
+    if (itemIndex < tabs.length) {
+
+        Ti.API.info('forwardItem itemIndex _ringtones ' + itemIndex + JSON.stringify(tabs[itemIndex]));
+        handleTabClick({
+            source : tabs[itemIndex]
+        });
+    } else {
+        itemIndex = itemIndex - 1;
+
+    }
+
+}
+
+function rewindItem(e) {
+
+    if (itemIndex > 0) {
+
+        Ti.API.info('itemIndex ' + itemIndex);
+        itemIndex = itemIndex - 1;
+        Ti.API.info('forwardItem itemIndex _ringtones ' + itemIndex + JSON.stringify(tabs[itemIndex]));
+        handleTabClick({
+            source : tabs[itemIndex]
+        });
+    }
+
 }

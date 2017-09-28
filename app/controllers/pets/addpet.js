@@ -24,7 +24,7 @@ loadDog(dog);
 
 var gender_opts = radio.createRadioButtonGroup({
     groupId : 1,
-    width : 180,
+    width : 145,
     height : 40,
     left : 10,
     top : 10,
@@ -42,7 +42,7 @@ var gender_opts = radio.createRadioButtonGroup({
 $.genderbox.add(gender_opts);
 var animaltype_opts = radio.createRadioButtonGroup({
     groupId : 1,
-    width : 180,
+    width : 145,
     height : 40,
     left : 10,
     top : 10,

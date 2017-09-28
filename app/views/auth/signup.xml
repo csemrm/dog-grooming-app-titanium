@@ -27,7 +27,7 @@
                     </Label>
                     <View id="gender"></View>
                 </View>
-                <TextArea id="address">
+                <TextArea id="address" onBlur="MLTextAreaBlur" onFocus="MLTextAreaFocus">
                     <ImageView id="addressicon"></ImageView>
                 </TextArea>
                 <View class="otherLoginView">

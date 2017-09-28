@@ -14,6 +14,21 @@ $.logo.addEventListener('load', function(e) {
     Ti.API.info('$.logo.image' + $.logo.image);
 });
 inti();
+
+function MLTextAreaFocus(e) {
+    if (e.source.value == "Your Address") {
+        e.source.value = "";
+        e.source.color = "#000";
+    }
+};
+
+function MLTextAreaBlur(e) {
+    if (e.source.value == '') {
+        e.source.value = "Your Address";
+        e.source.color = "#999";
+    }
+};
+
 var subscribebtn = radio.createCheckBoxButtonGroup({
     groupId : 1,
     width : 240,
@@ -59,7 +74,7 @@ function goNext(e) {
     var address = $.address.value;
     var city = $.city.value;
     var state = $.state.value;
-    var subscribe = Array.isArray(subscribebtn.selectedValue) || false;
+    var subscribe = (subscribebtn.selectedValue).length || false;
 
     var _data = {
         username : name,

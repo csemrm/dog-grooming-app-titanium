@@ -1,10 +1,10 @@
-// 
+//
 //  notificationdisplay.js
 //  WoodlesApp
-//  
+//
 //  Created by Mostafizur Rahman on 2017-09-27.
 //  Copyright 2017 Mostafizur Rahman. All rights reserved.
-// 
+//
 
 var args = $.args;
 var restapi = require('/restapi');
@@ -14,8 +14,8 @@ var user = Ti.App.Properties.getObject('user', {});
 var data = args.data || {};
 var extradata = JSON.parse(data.extradata) || {};
 var type = extradata.type || '';
- Ti.API.info('type '+ type +'notificationdisplay data images ' + JSON.stringify(extradata));
- 
+Ti.API.info('type ' + type + 'notificationdisplay data images ' + JSON.stringify(extradata));
+
 if (type === 'promo') {
     var promo = extradata.feed;
 
@@ -57,5 +57,62 @@ function gotoScreen() {
                 ref : 'home',
             }
         });
+    } else if (type === 'app.pending') {
+
     }
+}
+
+if (type === 'app.confirm' || type === 'app.pending') {
+    var gender_opts = radio.createCheckBoxButtonGroup({
+        groupId : 1,
+        width : 150,
+        height : 120,
+        left : 2,
+        top : 15,
+        layout : 'vertical',
+        radioItemsValue : services,
+        radioItemsPadding : 5,
+        radioItemsBackgroundSelectedImage : '/images/checkbox_tick.png',
+        radioItemsBackgroundImage : '/images/checkbox.png',
+        radioItemsWidth : 12,
+        radioItemsHeight : 12,
+        labelColor : Alloy.CFG.apptheme.input_text_color,
+    });
+    $.dogcontainner.add(gender_opts);
+}
+
+function onSubmit(e) {
+    var _data = {
+        id : 2,
+        status_id : 3
+    };
+
+    Ti.API.info('_data  ' + JSON.stringify(_data));
+
+    restapi.reservations(_data, function(data) {
+        if (data.error === true) {
+            var param = {
+                buttonNames : ['Ok'],
+                message : data.message,
+                callback : function(e) {
+                }
+            };
+            assets.alertMsg(param);
+        } else {
+            Ti.API.info('get config' + JSON.stringify(data));
+            var param = {
+                buttonNames : ['Ok'],
+                message : data.message,
+                callback : function(e) {
+
+                }
+            };
+            assets.alertMsg(param);
+        }
+    }, function() {
+        indicator_win.close();
+        Alloy.createController('error/noapi', {}).getView().open();
+
+    });
+
 }

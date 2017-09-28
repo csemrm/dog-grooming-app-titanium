@@ -3,6 +3,11 @@
     width: Ti.UI.FILL,
     height: Ti.UI.FILL
 }
+"#bgview":{
+    opacity: 0.5,
+    width: Ti.UI.FILL,
+    height: Ti.UI.FILL
+}
 
 "#dogcontainner":{
     width: 280,
@@ -42,6 +47,6 @@
     top: 10,
     image: "/buttons/SAA.png",
     width: 180,
-    height:40,
+    height: 40,
     bottom: 20
 }

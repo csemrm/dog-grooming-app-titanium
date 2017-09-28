@@ -18,9 +18,14 @@ Ti.API.info('Alloy.CFG.assets.logoImg' + Alloy.CFG.assets + logoImg + 'config ' 
 indicator_win = new indicator();
 
 //if (Alloy.Globals.height > 640) {
-$.promo.top = Alloy.Globals.height > 650 ? (Alloy.Globals.height - 640) : 10;
+//$.promo.top = Alloy.Globals.height > 650 ? (Alloy.Globals.height - 640) : 10;
 //}
+var logoImg = config.images[0].path;
+$.logo.image = Alloy.CFG.assets + logoImg;
 
+$.logo.addEventListener('load', function(e) {
+    Ti.API.info('$.logo.image' + $.logo.image);
+});
 function loadpromos() {
     indicator_win.open();
     restapi.loadpromos(function(e) {

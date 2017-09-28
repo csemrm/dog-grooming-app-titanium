@@ -1,7 +1,7 @@
 <Alloy>
     <Window  id="main" >
         <Require type="widget" src="com.csemrm.navigationBar" textAlign="left" id="navigationBar" />
-        <View id="mapContainner"></View>
+        <View id="mapContainner" onSwipe="changeTab"></View>
         <Require type="widget" src="com.csemrm.tabs" id="Tabs" />
 
     </Window>

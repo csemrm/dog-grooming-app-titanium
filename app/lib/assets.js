@@ -385,8 +385,8 @@ exports.timeanddate_picker = function(type, selectRow, addTo, value) {
 
     selectButton.addEventListener('click', function(e) {
         if (type == "date") {
-            Ti.API.info('date ' + moment(picker.value.toString(), 'ddd MMM DD YYYY HH:mm:ss Z').format('DD/MM/YYYY'));
-            selectRow.text = moment(picker.value.toString(), 'ddd MMM DD YYYY HH:mm:ss Z').format('DD/MM/YYYY');
+            Ti.API.info('date ' + moment(picker.value.toString(), 'ddd MMM DD YYYY HH:mm:ss Z').format('MM/DD/YYYY'));
+            selectRow.text = moment(picker.value.toString(), 'ddd MMM DD YYYY HH:mm:ss Z').format('MM/DD/YYYY');
             selectRow.time_stamp = new moment(picker.value.toString(), 'ddd MMM DD YYYY HH:mm:ss Z').format('YYYY-MM-DDTHH:mm:ss');
 
             var dd = picker.value.getDate();
