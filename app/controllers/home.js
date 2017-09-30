@@ -115,9 +115,11 @@ $.main.addEventListener('open', function(e) {
 Ti.App.addEventListener('app:messagePush', messagePush);
 function messagePush(event) {
     Ti.API.info('messagePush ' + JSON.stringify(event));
-    var popcontroller = Alloy.createController('pets/notificationdisplay', event).getView();
-    popcontroller.open();
-    Ti.App.removeEventListener('app:messagePush', messagePush);
+    if (Ti.App.Properties.getBool('clearpush')) {
+        var popcontroller = Alloy.createController('pets/notificationdisplay', event).getView();
+        popcontroller.open();
+    }
+    //Ti.App.removeEventListener('app:messagePush', messagePush);
 }
 
 function changeTab(e) {

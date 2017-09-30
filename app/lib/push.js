@@ -50,13 +50,15 @@ exports.subscribe = function() {
         gcm.registerPush({
             senderId : '165354934161',
             notificationSettings : {
-                sound : 'default', /* Place sound file in platform/android/res/raw/mysound.mp3 */
+                sound : 'capisci', /* Place sound file in platform/android/res/raw/mysound.mp3 */
                 smallIcon : 'appicon.png', /* Place icon in platform/android/res/drawable/notification_icon.png */
                 largeIcon : 'appicon.png', /* Same */
                 vibrate : true, /* Whether the phone should vibrate */
-                insistent : true, /* Whether the notification should be insistent */
+                insistent : false, /* Whether the notification should be insistent */
                 localOnly : false, /* Whether this notification should be bridged to other devices */
-                priority : +2, /* Notification priority, from -2 to +2 */
+                backgroundOnly : false,
+                group : 'WoodlesApp',
+                priority : 0, /* Notification priority, from -2 to +2 */
                 bigText : false,
                 ledOn : parseInt(200),
                 ledOff : parseInt(300)

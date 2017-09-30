@@ -273,6 +273,7 @@ function cShowCamera(truckImageBox) {
 
 exports.shareTextWidget = function(e) {
     // share text status
+    Ti.API.info('e '+ JSON.stringify(e));
     var socialWidget = Alloy.createWidget('com.alcoapps.socialshare');
     socialWidget.share(e);
 };

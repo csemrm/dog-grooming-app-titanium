@@ -143,7 +143,7 @@ exports.createCheckBoxButtonGroup = function(arg) {
         var radioItemImage = Ti.UI.createImageView({
             width : arg.radioItemsWidth,
             height : arg.radioItemsHeight,
-            image : selectedIndex === i ? arg.radioItemsBackgroundSelectedImage : arg.radioItemsBackgroundImage,
+            image : textFilter(selectedValue, arg.radioItemsValue[i]) ? arg.radioItemsBackgroundSelectedImage : arg.radioItemsBackgroundImage,
 
             left : 0,
             id : i,
@@ -188,4 +188,19 @@ exports.createCheckBoxButtonGroup = function(arg) {
     }
 
     return self;
+};
+var textFilter = function(array, string) {
+
+    Ti.API.info('textFilter.array ' + JSON.stringify(array) + ' string ' + string);
+
+    for (var i = 0,
+        j = array.length; i < j; i++) {
+        var phr = array[i];
+        Ti.API.info('(phr.id) === parseInt(string) ' + (phr) + "===" + (string) + ((phr) === (string)));
+        if ((phr) == (string)) {
+            return true;
+        }
+    };
+
+    return false;
 };

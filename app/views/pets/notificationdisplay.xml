@@ -1,12 +1,14 @@
 <Alloy>
-    <Window class="container" id="notificationdisplay">
+    <Window class="container" id="notificationdisplay" onClose="clearpush">
         <View id="bgview"></View>
         <View id="dogcontainner">
             <View  id="dogdisply">
                 <ImageView id="imgdog"></ImageView>
             </View>
             <Label id="promodesc">You have new promo for your pets</Label>
-            <ImageView id="appointments"onClick="gotoScreen"></ImageView>
+            <View id="serviceid"></View>
+            <Button id="appointments"onClick="gotoScreen"></Button>
+            <Button id="direction"onClick="gotoDirection"></Button>
         </View>
     </Window>
 </Alloy>

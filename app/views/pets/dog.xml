@@ -2,5 +2,6 @@
     <View class="container" id="dogdisply">
         <Label id="petname"></Label>
         <View id="imgdog"></View>
+        <Label id="lastvisit">Last Visit: N\A</Label>
     </View>
 </Alloy>

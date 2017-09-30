@@ -12,7 +12,7 @@ var assets = require('/assets');
 var dogId = args.dogId || '';
 var dog = args.dog || {};
 Ti.API.info('dog' + JSON.stringify(dog));
-
+var moment = require('alloy/moment');
 var images = [];
 $.dogdisply.dog = dog;
 
@@ -20,6 +20,11 @@ if (dog.id === dogId) {
     $.dogdisply.borderColor = Alloy.CFG.apptheme.top_nev_bar_bg;
 }
 $.petname.text = dog.name || 'dog.name';
+
+if (dog.lastvisit || '') {
+    $.lastvisit.text = 'Last Visit: ' + moment(dog.lastvisit, 'ddd MMM DD YYYY HH:mm:ss Z').format('DD/MM/YYYY');
+}
+
 loaddog(dog);
 function loaddog(dog) {
     var dogimages = dog.images || [];
@@ -28,7 +33,7 @@ function loaddog(dog) {
             j = dogimages.length; i < j; i++) {
             images.push(Alloy.CFG.assets + dogimages[i].path);
         };
-        $.imgdog.add(assets.Utils.RemoteImage({
+        $.imgdog.add(Ti.UI.createImageView({
             image : encodeURI(images[0]),
             width : Ti.UI.FILL,
             height : Ti.UI.FILL,
@@ -41,7 +46,7 @@ function loaddog(dog) {
         } else if (dog.type === 'Cat') {
             var _image = '/images/avators-cat.png';
         }
-        $.imgdog.add(assets.Utils.RemoteImage({
+        $.imgdog.add(Ti.UI.createImageView({
             image : encodeURI(_image),
             width : Ti.UI.FILL,
             height : Ti.UI.FILL,

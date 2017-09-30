@@ -27,7 +27,8 @@ Ti.API.info('dog' + JSON.stringify(dog));
 var images = [];
 var itemIndex = 0;
 var win;
-var services = config.services ;//|| ['Dog Walk', 'Wash', 'Hair Cut', 'Bail Trimming', 'Flea Treatment', 'Over night vacation'];
+var services = config.services;
+//|| ['Dog Walk', 'Wash', 'Hair Cut', 'Bail Trimming', 'Flea Treatment', 'Over night vacation'];
 if (dogId)
     loaddog(dog);
 
@@ -179,14 +180,14 @@ function direction_left(images) {
     a1.duration = 400;
     $.imgdog.stop();
     $.imgdog.animate(a1, function() {
-        $.imgdog.images = images;
+        $.imgdog.image = images[0];
         var t1 = Ti.UI.create2DMatrix();
         t1 = t1.translate(0, 0);
         var a2 = Ti.UI.createAnimation();
         a2.transform = t1;
         a2.duration = 400;
         $.imgdog.animate(a2);
-        $.imgdog.start();
+        ////$.imgdog.start();
     });
 
 }
@@ -199,7 +200,7 @@ function direction_right(images) {
     a1.duration = 400;
     $.imgdog.stop();
     $.imgdog.animate(a1, function() {
-        $.imgdog.images = images;
+        $.imgdog.image = images[0];
         var t1 = Ti.UI.create2DMatrix();
         t1 = t1.translate(0, 0);
         var a2 = Ti.UI.createAnimation();
@@ -207,7 +208,7 @@ function direction_right(images) {
         a2.duration = 400;
         $.imgdog.animate(a2);
         Ti.API.info('imgdog' + JSON.stringify($.imgdog));
-        $.imgdog.start();
+        ////$.imgdog.start();
     });
 
 }
@@ -275,12 +276,28 @@ function editDog() {
 }
 
 function shareDog() {
+
+    var fileToShare = null;
+
+    // generate image from screen
+    if (OS_ANDROID) {
+        var img = $.imgdog.toImage();
+        fileToShare = Titanium.Filesystem.getFile(Titanium.Filesystem.applicationDataDirectory, 'tempimage.png');
+
+    } else {
+        var img = $.imgdog.toImage();
+        fileToShare = Titanium.Filesystem.getFile(Titanium.Filesystem.applicationDataDirectory, 'tempimage.png');
+    }
+    //fileToShare.write(img);
+
     var data = {
         status : dog.name,
         subject : dog.name,
-        image : $.imgdog.toBlob(),
+        image : fileToShare.nativePath,
         view : $.add,
+        androidDialogTitle : 'WoodlesApp'
     };
+
     assets.shareTextWidget(data);
 
 }
@@ -348,7 +365,6 @@ function onConfirmSubmit(e) {
         onSubmit();
     });
     containerView.add(submitbtn);
-
     win.open();
 }
 
@@ -359,9 +375,10 @@ function loaddog(dog) {
             j = dogimages.length; i < j; i++) {
             images.push(Alloy.CFG.assets + dogimages[i].path);
         };
-        $.imgdog.images = images;
-        $.imgdog.start();
-    } else if (dog.type === 'Dog') {
+        $.imgdog.image = images[0];
+        ////$.imgdog.start();
+    }
+    else if (dog.type === 'Dog') {
         $.imgdog.image = '/images/avators-dog.png';
     } else if (dog.type === 'Cat') {
         $.imgdog.image = '/images/avators-cat.png';

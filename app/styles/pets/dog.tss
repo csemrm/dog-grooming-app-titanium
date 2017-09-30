@@ -24,3 +24,13 @@
     textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
     touchEnabled: false
 }
+"#lastvisit":{
+    top: -20,
+    height: 20,
+    color: Alloy.CFG.apptheme.color_black,
+    font:{
+        fontSize: 10
+    },
+    textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER,
+    touchEnabled: false
+}

@@ -53,9 +53,9 @@
 }
 "#schedule":{
     bottom: 140,
-    height: 35,
+    height: 30,
     width: Titanium.UI.FILL,
-    text: "Schedule \n for",
+    text: "Schedule for",
     color: Alloy.CFG.apptheme.input_text_color,
     font:{
         fontSize: 10

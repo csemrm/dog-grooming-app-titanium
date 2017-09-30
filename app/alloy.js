@@ -27,3 +27,4 @@ if (Ti.Platform.osname === 'android') {
 Alloy.Globals.width = width;
 Alloy.Globals.height = height;
 Ti.API.info(' width ' + width + '  height ' + height);
+Ti.App.Properties.setBool('clearpush', true); 
